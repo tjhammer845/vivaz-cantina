@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `Vivas Cantina | Authentic Mexican in New Haven, CT`,
+        title: `VivaZ Mexican Cantina | Best Authentic Mexican in New Haven, CT`,
         description: `Let us show you food from the heart for the soul.`,
         author: `@thecaffeineteam`,
     },

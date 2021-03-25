@@ -18,10 +18,10 @@ const Dish = props => (
 )
 const Menu = ({ data }) => (
     <Layout>
-        <SEO title="Vivas Cantina Brunch" />
+        <SEO title="VivaZ Mexican Cantina Brunch Menu" />
         <Container>
             <h2>Brunch Menu</h2>
-            <p>Come in to Vivas Cantina for the best Mexican-inspired brunch every Saturday and Sunday from 9am - 1pm.</p>
+            <p>Come in to VivaZ Mexican Cantina for the best Mexican-inspired brunch every Saturday and Sunday from 9am - 1pm.</p>
             <Dish
                 name="Fajitas"
                 avatar="https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/docs/tutorial/part-two/pexels-daniel-xavier-1102341.jpg"

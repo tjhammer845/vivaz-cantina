@@ -20,7 +20,7 @@ const aboutUs = () => (
     <Layout>
         <SEO title="About Us" />
         <Container>
-            <h2>About Vivas Cantina in New Haven, CT</h2>
+            <h2>About VivaZ Mexican Cantina in New Haven, CT</h2>
             <p>Nunc ulvinar sapien et ligula ullamcorper malesuada proin. Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Sapien nec sagittis aliquam malesuada bibendum. Et tortor consequat id porta nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in. A pellentesque sit amet porttitor eget dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget gravida cum sociis natoque penatibus et magnis dis.</p>
             <User
                 username="Bernard Lanche"
