@@ -53,6 +53,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-shadow: none;
+  background-image: none;
 }
 a:active,
 a:hover {
@@ -85,7 +87,7 @@ h1 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 mark {
@@ -594,4 +596,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} 
