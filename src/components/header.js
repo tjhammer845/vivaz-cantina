@@ -1,28 +1,28 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-const ListLink = props => (
-    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-        <Link to={props.to}>{props.children}</Link>
+import Container from 'react-bootstrap/Container'
+
+
+const HeaderLink = props => (
+    <li style={{ display: `inline-block`, marginBottom: `0`, marginLeft: `1rem` }}>
+        <Link to={props.to} title={props.title} style={{ color: `white`, }}>{props.children}</Link>
     </li>
 )
-
 const Header = ({ siteTitle }) => (
     <header
         style={{
-            background: `black`,
-            marginBottom: `1.45rem`,
+            background: `#a51e25`,
         }}
     >
-        <div
+        <Container
             style={{
-                margin: `0 auto`,
-                maxWidth: 960,
                 padding: `1.45rem 1.0875rem`,
             }}
         >
             <Link
                 to="/"
+                title="Home"
                 style={{
                     color: `white`,
                     textDecoration: `none`,
@@ -32,12 +32,12 @@ const Header = ({ siteTitle }) => (
                     {siteTitle}
                 </h1>
             </Link>
-            <ul style={{ listStyle: `none`, float: `right` }}>
-                <ListLink to="/aboutUs/">About Us</ListLink>
-                <ListLink to="/menu/">Our Menu</ListLink>
-                <ListLink to="/contact/">Contact Us</ListLink>
+            <ul style={{ listStyle: `none`, float: `right`, margin: `0` }}>
+                <HeaderLink to="/menu/" title="Our Menu">Our Menu</HeaderLink>
+                <HeaderLink to="/aboutUs/" title="About Us">About Us</HeaderLink>
+                <HeaderLink to="/contactUs/" title="Contact Us">Contact Us</HeaderLink>
             </ul>
-        </div>
+        </Container>
     </header>
 )
 

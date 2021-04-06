@@ -1,23 +1,33 @@
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
     siteMetadata: {
-        title: `VivaZ Mexican Cantina | Best Authentic Mexican in New Haven, CT`,
+        title: `VivaZ Cantina | Authentic Mexican in New Haven, CT`,
         description: `Let us show you food from the heart for the soul.`,
         author: `@thecaffeineteam`,
     },
+    flags: {
+        DEV_SSR: false,
+    },
     plugins: [
         {
-            resolve: `gatsby-plugin-typography`,
+            resolve: `gatsby-source-contentful`,
             options: {
-                pathToConfigModule: `src/utils/typography`,
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                // Learn about environment variables: https://gatsby.dev/env-vars
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `src`,
-                path: `${__dirname}/src/`,
+                path: `${__dirname}/src/menu`,
+                name: 'menu',
             },
         },
+        `gatsby-plugin-styled-components`,
+        `gatsby-plugin-typography`,
         `gatsby-transformer-remark`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-image`,
@@ -41,6 +51,17 @@ module.exports = {
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [
+                    `Zilla Slab\:700`,
+                    `Josefin Sans\:600, 600i, 700, 700i`,
+                    `Noto Sans JP\:300,500,700, 900`
+                ],
+                display: 'swap'
+            }
         },
         `gatsby-plugin-gatsby-cloud`,
         // this (optional) plugin enables Progressive Web App + Offline functionality
