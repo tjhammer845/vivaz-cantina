@@ -1,16 +1,15 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em 'Noto Sans JP', serif, sans-serif;
+  font: 112.5%/1.45em "Noto Sans JP", serif, sans-serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Noto Sans JP', serif;
+  font-family: "Noto Sans JP", serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -33,6 +32,12 @@ section,
 summary {
   display: block;
 }
+header {
+  z-index: 20;
+}
+.mt-header {
+  margin-top: 10rem;
+}
 audio,
 canvas,
 progress,
@@ -51,6 +56,7 @@ template {
   display: none;
 }
 a {
+  color: #8b1f2f;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-shadow: none;
@@ -58,7 +64,10 @@ a {
 }
 a:active,
 a:hover {
+  color: #a51e25;
   outline-width: 0;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
 }
 abbr[title] {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
@@ -83,11 +92,11 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Zilla Slab', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Zilla Slab", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: 700;
   text-rendering: optimizeLegibility;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.1;
 }
 mark {
@@ -262,11 +271,12 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   font-weight: 600;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  font-size: 1.7rem;
   line-height: 1.1;
 }
 h3 {
@@ -277,13 +287,14 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.25rem;
   color: inherit;
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: 1.25rem;
   line-height: 1.1;
 }
 h4 {
@@ -296,11 +307,12 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1rem;
+  font-size: 1.45rem;
   line-height: 1.1;
 }
 h5 {
@@ -313,8 +325,9 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -330,8 +343,9 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -596,4 +610,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-} 
+}

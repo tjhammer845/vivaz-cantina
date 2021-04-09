@@ -8,32 +8,39 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components"
+import { variables } from "../utils/variables"
 
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`query SiteTitleQuery {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
       site {
         siteMetadata {
           title
         }
       }
-    }`)
+    }
+  `)
 
-    return (
-        <>
-            <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-            <main>{children}</main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <main
+        className={`${window.location.pathname !== "/" ? "mt-header" : "mt-0"}`}
+      >
+        {children}
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
