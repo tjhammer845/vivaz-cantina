@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/layout"
-import Slider from "../components/slideshow"
+import Slideshow from "../components/home-slideshow"
 import SEO from "../components/seo"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -35,11 +35,11 @@ const options = {
 const IndexPage = ({ data: { item } }) => (
   <Layout>
     <SEO title="Home" />
-    <Slider />
+    <Slideshow />
     <Container className="mt-5">
       <Row>
         <Col sm={12}>
-          <h2>Welcome to the most authentic Mexican gourmet in New Haven!</h2>
+          <h2>Welcome to the best Mexican Food in New Haven!</h2>
           <p>
             Turpis nunc eget lorem dolor. <a href="/">Maecenas accumsan</a>{" "}
             lacus vel facilisis volutpat est velit egestas dui. Sit amet
@@ -60,7 +60,13 @@ const IndexPage = ({ data: { item } }) => (
             dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
             gravida cum sociis natoque penatibus et magnis dis.
           </p>
-          <h3>Popular Bites</h3>
+        </Col>
+      </Row>
+    </Container>
+    <Container>
+      <Row>
+        <Col sm={12}>
+          <h3>Try some of our favorite bites!</h3>
         </Col>
       </Row>
       <Row className="justify-content-md-between">
@@ -80,7 +86,8 @@ const IndexPage = ({ data: { item } }) => (
                   />
                   <h4
                     style={{
-                      marginTop: `2rem`,
+                      marginTop: `1rem`,
+                      marginBottom: `0`,
                     }}
                   >
                     {item.title}

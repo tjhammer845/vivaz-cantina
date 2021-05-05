@@ -44,10 +44,13 @@ const MenuIconContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 7px;
   @media ${breakpoints.lg} {
     right: 0;
+  }
+  @media ${breakpoints.md} {
+    top: 3rem;
   }
 `
 
@@ -125,7 +128,7 @@ const MenuLinks = styled.nav`
         display: block;
         :hover,
         :active {
-          color: ${variables.magenta};
+          color: ${variables.yellow};
         }
       }
     }

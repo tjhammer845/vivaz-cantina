@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 const HeaderLink = props => (
   <li className={props.className}>
     <Link to={props.to} title={props.title} activeClassName="active">
+      <hr />
       {props.children}
     </Link>
   </li>

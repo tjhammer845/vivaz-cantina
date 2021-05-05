@@ -15,17 +15,13 @@ const FooterLink = props => (
   </li>
 )
 const Footer = () => (
-  <footer
-    style={{
-      marginTop: `4rem`,
-      background: `${variables.purple}`,
-    }}
-  >
+  <StyledFooter>
     <Container fluid="lg">
-      <Row className="pt-5 pb-5">
+      <Row className="pt-4 pb-4">
         <Col
           sm={12}
           md={6}
+          lg={5}
           className="d-flex justify-content-center justify-content-md-start mb-4 mb-md-0"
         >
           <MenuLinks>
@@ -48,10 +44,11 @@ const Footer = () => (
         <Col
           sm={12}
           md={6}
+          lg={7}
           className="d-flex justify-content-center justify-content-md-end"
         >
           <p className="text-white m-0">
-            &copy; {new Date().getFullYear()}, Built by
+            &copy; {new Date().getFullYear()}. Built by
             {` `}
             <a className="text-white" href="https://tom.thecaffeineteam.com">
               The Caffeine Team
@@ -60,10 +57,16 @@ const Footer = () => (
         </Col>
       </Row>
     </Container>
-  </footer>
+  </StyledFooter>
 )
 export default Footer
-
+const StyledFooter = styled.footer`
+  background: ${variables.purple};
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+`
 const MenuLinks = styled.nav`
     display: flex;
     width: 100%;
@@ -86,7 +89,7 @@ const MenuLinks = styled.nav`
           transition: color 300ms;
 
           :hover {
-            color: #8d1a2b;
+            color: ${variables.yellow};
           }
         }
       }

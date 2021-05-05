@@ -2,7 +2,8 @@ const size = {
   sm: "640px",
   md: "768px",
   lg: "1024px",
-  xl: "1280px",
+  xl: "1199px",
+  xxl: "1280px",
 }
 
 export const breakpoints = {
@@ -10,4 +11,7 @@ export const breakpoints = {
   md: `(min-width: ${size.md})`,
   lg: `(min-width: ${size.lg})`,
   xl: `(min-width: ${size.xl})`,
+  xxl: `(min-width: ${size.xxl})`,
+
+  maxmd: `(max-width: ${size.md})`,
 }

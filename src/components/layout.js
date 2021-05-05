@@ -8,12 +8,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from "styled-components"
-import { variables } from "../utils/variables"
-
+import TopHeader from "./top-header"
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
+import Scroll from "../components/scroll-to-top"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,19 +28,17 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <TopHeader />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main
-        className={`${window.location.pathname !== "/" ? "mt-header" : "mt-0"}`}
-      >
-        {children}
+      <main className="mt-header" style={{ marginBottom: `81px` }}>
+        <ParallaxProvider>{children}</ParallaxProvider>
       </main>
       <Footer />
+      <Scroll showBelow={250} />
     </>
   )
 }
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
 export default Layout
