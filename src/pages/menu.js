@@ -13,7 +13,16 @@ import { variables } from "../utils/variables"
 import styled from "styled-components"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-left">{children}</p>
+const Text = ({ children }) => (
+  <p
+    className="align-left"
+    style={{
+      fontSize: ".85rem",
+    }}
+  >
+    {children}
+  </p>
+)
 
 const options = {
   renderMark: {
@@ -89,7 +98,7 @@ const Menu = ({ data: { item } }) => (
             <p>Main Courses Description</p>
           </Col>
         </Row>
-        <Row className="justify-content-md-between">
+        <Row className="justify-content-md-between pb-5">
           {item.nodes.map(item => {
             return (
               item.menuSection === "Main Courses" && (
@@ -119,7 +128,7 @@ const Menu = ({ data: { item } }) => (
             <p>Desserts Description</p>
           </Col>
         </Row>
-        <Row className="justify-content-md-between">
+        <Row className="justify-content-md-between pb-5">
           {item.nodes.map(item => {
             return (
               item.menuSection === "Desserts" && (
@@ -154,7 +163,7 @@ const Menu = ({ data: { item } }) => (
             <p>Drinks Description</p>
           </Col>
         </Row>
-        <Row className="justify-content-md-between">
+        <Row className="justify-content-md-between pb-5">
           {item.nodes.map(item => {
             return (
               item.menuSection === "Drinks" && (
@@ -189,7 +198,7 @@ const Menu = ({ data: { item } }) => (
             <p>Wine and Beer Description</p>
           </Col>
         </Row>
-        <Row className="justify-content-md-between">
+        <Row className="justify-content-md-between pb-5">
           {item.nodes.map(item => {
             return (
               item.menuSection === "Wine and Beer" && (
@@ -216,7 +225,23 @@ const Menu = ({ data: { item } }) => (
         </Row>
       </Container>
     </WineBeerSection>
-    <EndSection />
+    <EndSection>
+      <Container>
+        <Row>
+          <Col sm={12} className="text-center">
+            <h3 className="mt-5">
+              Disclaimer: pricing and availability subject to change.
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </EndSection>
   </Layout>
 )
 export default Menu
