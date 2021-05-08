@@ -27,7 +27,7 @@ const InstagramFeed = () => {
   return (
     <IgFeedContainer>
       <div
-        style={{ maxWidth: `900px`, marginBottom: `1.45rem`, display: "flex" }}
+        style={{ maxWidth: `960px`, marginBottom: `1.45rem`, display: "flex" }}
       >
         {arrayOfInstaImages.map((item, i) => {
           return (
