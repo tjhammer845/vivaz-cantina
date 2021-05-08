@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "react-bootstrap/Container"
@@ -18,7 +17,7 @@ const User = props => (
     </div>
   </div>
 )
-const aboutUs = () => (
+const about = () => (
   <Layout>
     <SEO title="About" />
     <Parallax y={[-60, 20]} tagOuter="figure">
@@ -126,4 +125,4 @@ const aboutUs = () => (
   </Layout>
 )
 
-export default aboutUs
+export default about
