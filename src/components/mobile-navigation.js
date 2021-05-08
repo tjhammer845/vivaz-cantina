@@ -44,13 +44,13 @@ const MenuIconContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  top: 1rem;
+  top: 2.5rem;
   right: 7px;
+  padding: 0.25rem 0;
+  border-radius: 5px;
+  background: ${variables.darkOrange};
   @media ${breakpoints.lg} {
     right: 0;
-  }
-  @media ${breakpoints.md} {
-    top: 3rem;
   }
 `
 

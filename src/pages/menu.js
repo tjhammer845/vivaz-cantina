@@ -17,7 +17,7 @@ const Text = ({ children }) => (
   <p
     className="align-left"
     style={{
-      fontSize: ".85rem",
+      wordBreak: "break-word",
     }}
   >
     {children}
@@ -44,6 +44,7 @@ const options = {
 }
 const Menu = ({ data: { item } }) => (
   <Layout>
+    <SEO title="Menu" />
     <Slideshow />
     <TitleSection>
       <Container>
@@ -72,7 +73,7 @@ const Menu = ({ data: { item } }) => (
           {item.nodes.map(item => {
             return (
               item.menuSection === "Appetizers" && (
-                <Col sm={4} xs={6} key={`appetizer-item-${item.slug}`}>
+                <Col md={4} sm={6} xs={12} key={`appetizer-item-${item.slug}`}>
                   <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
                     <Link to={`/${item.slug}`} title={item.title}>
                       <GatsbyImage
@@ -102,7 +103,12 @@ const Menu = ({ data: { item } }) => (
           {item.nodes.map(item => {
             return (
               item.menuSection === "Main Courses" && (
-                <Col sm={4} xs={6} key={`main-courses-item-${item.slug}`}>
+                <Col
+                  md={4}
+                  sm={6}
+                  xs={12}
+                  key={`main-courses-item-${item.slug}`}
+                >
                   <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
                     <Link to={`/${item.slug}`} title={item.title}>
                       <GatsbyImage
@@ -132,13 +138,8 @@ const Menu = ({ data: { item } }) => (
           {item.nodes.map(item => {
             return (
               item.menuSection === "Desserts" && (
-                <Col
-                  sm={4}
-                  xs={6}
-                  // className="m-0"
-                  key={`desserts-item-${item.slug}`}
-                >
-                  <div className="bg-white border rounded pt-3 pl-3 pr-3 mb-4">
+                <Col md={4} sm={6} xs={12} key={`desserts-item-${item.slug}`}>
+                  <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
                     <Link to={`/${item.slug}`} title={item.title}>
                       <GatsbyImage
                         image={item.featuredImage.gatsbyImageData}
@@ -167,12 +168,7 @@ const Menu = ({ data: { item } }) => (
           {item.nodes.map(item => {
             return (
               item.menuSection === "Drinks" && (
-                <Col
-                  sm={4}
-                  xs={6}
-                  // className="m-0"
-                  key={`drinks-item-${item.slug}`}
-                >
+                <Col md={4} sm={6} xs={12} key={`drinks-item-${item.slug}`}>
                   <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
                     <Link to={`/${item.slug}`} title={item.title}>
                       <GatsbyImage
@@ -203,9 +199,9 @@ const Menu = ({ data: { item } }) => (
             return (
               item.menuSection === "Wine and Beer" && (
                 <Col
-                  sm={4}
-                  xs={6}
-                  // className="m-0"
+                  md={4}
+                  sm={6}
+                  xs={12}
                   key={`wine-and-beer-item-${item.slug}`}
                 >
                   <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">

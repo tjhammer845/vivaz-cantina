@@ -11,8 +11,11 @@ body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: "Noto Sans JP", serif;
   font-weight: normal;
-  word-wrap: break-word;
   font-kerning: normal;
+  line-break: auto;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -34,9 +37,6 @@ summary {
 }
 header {
   z-index: 20;
-}
-.mt-header {
-  margin-top: 8rem;
 }
 audio,
 canvas,

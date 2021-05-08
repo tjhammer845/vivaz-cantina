@@ -1,8 +1,10 @@
 export const variables = {
   orange: "#ff0000",
   bloodOrange: "#a52800",
+  darkOrange: "#6b1b01",
   purple: "#221a41",
   yellow: "#ffff00",
+  paleYellow: "#ffc1074a",
 
   // Transparant Colors
   transWhite: "rgba(255, 255, 255, 0.8)",

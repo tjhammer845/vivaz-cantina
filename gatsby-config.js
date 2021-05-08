@@ -19,13 +19,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/menu`,
-    //     name: "menu",
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,14 +37,6 @@ module.exports = {
     `gatsby-plugin-typography`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -75,6 +60,12 @@ module.exports = {
           `Noto Sans JP\:300,500,700, 900`,
         ],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
       },
     },
     `gatsby-plugin-gatsby-cloud`,

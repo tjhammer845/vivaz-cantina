@@ -5,11 +5,11 @@ import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/layout"
 import Slideshow from "../components/home-slideshow"
 import SEO from "../components/seo"
+import InstagramFeed from "../components/instagram-feed"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { GatsbyImage } from "gatsby-plugin-image"
-
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-left">{children}</p>
 
@@ -98,6 +98,18 @@ const IndexPage = ({ data: { item } }) => (
             )
           )
         })}
+      </Row>
+    </Container>
+    <Container>
+      <Row>
+        <Col sm={12}>
+          <h3>Follow us on Instagram for Promotions and Updates!</h3>
+        </Col>
+      </Row>
+      <Row className="justify-content-md-between">
+        <Col sm={12}>
+          <InstagramFeed />
+        </Col>
       </Row>
     </Container>
   </Layout>

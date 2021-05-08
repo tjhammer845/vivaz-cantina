@@ -14,6 +14,8 @@ import Footer from "./footer"
 import "./layout.css"
 import Scroll from "../components/scroll-to-top"
 import { ParallaxProvider } from "react-scroll-parallax"
+import styled from "styled-components"
+import { variables } from "../utils/variables"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,9 +32,9 @@ const Layout = ({ children }) => {
     <>
       <TopHeader />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main className="mt-header" style={{ marginBottom: `81px` }}>
+      <StyledMain>
         <ParallaxProvider>{children}</ParallaxProvider>
-      </main>
+      </StyledMain>
       <Footer />
       <Scroll showBelow={250} />
     </>
@@ -42,3 +44,9 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 export default Layout
+
+const StyledMain = styled.main`
+  padding-top: 10rem;
+  padding-bottom: 7rem;
+  background: ${variables.paleYellow};
+`

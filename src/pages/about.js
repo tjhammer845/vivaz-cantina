@@ -20,7 +20,7 @@ const User = props => (
 )
 const aboutUs = () => (
   <Layout>
-    <SEO title="Vivaz Cantina | About" />
+    <SEO title="About" />
     <Parallax y={[-60, 20]} tagOuter="figure">
       <StaticImage
         src="../images/slides/about-slides/about-slide-1.jpg"

@@ -48,10 +48,10 @@ const Footer = () => (
           className="d-flex justify-content-center justify-content-md-end"
         >
           <p className="text-white m-0">
-            &copy; {new Date().getFullYear()}. Built by
+            &copy; {new Date().getFullYear()} Vivaz Cantina. Built by
             {` `}
             <a className="text-white" href="https://tom.thecaffeineteam.com">
-              The Caffeine Team
+              The Caffeine Team.
             </a>
           </p>
         </Col>
