@@ -221,7 +221,7 @@ const Menu = ({ data: { item } }) => (
         </Row>
       </Container>
     </WineBeerSection>
-    <EndSection>
+    <EndSection className="shadow">
       <Container>
         <Row>
           <Col sm={12} className="text-center">
@@ -269,7 +269,7 @@ const TitleSection = styled.div`
   width: 100%;
   transition: background 300ms;
   background: ${variables.transWhite};
-  padding: 8rem 0 3rem;
+  padding: 18rem 0 3rem;
 }
 `
 const AppetizersSection = styled.div`
@@ -312,6 +312,6 @@ const EndSection = styled.div`
   width: 100%;
   transition: background 300ms;
   background: ${variables.transWhite};
-  padding: 3rem 0 8rem;
+  padding: 3rem 0 5rem;
 }
 `

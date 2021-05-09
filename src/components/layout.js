@@ -15,7 +15,6 @@ import "./layout.css"
 import Scroll from "../components/scroll-to-top"
 import { ParallaxProvider } from "react-scroll-parallax"
 import styled from "styled-components"
-import { variables } from "../utils/variables"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -46,7 +45,5 @@ Layout.propTypes = {
 export default Layout
 
 const StyledMain = styled.main`
-  padding-top: 10rem;
   padding-bottom: 7rem;
-  background: ${variables.paleYellow};
 `

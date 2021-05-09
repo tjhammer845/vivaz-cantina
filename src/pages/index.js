@@ -10,9 +10,11 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { GatsbyImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+import { variables } from "../utils/variables"
+
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-left">{children}</p>
-
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
@@ -33,86 +35,72 @@ const options = {
 }
 
 const IndexPage = ({ data: { item } }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Slideshow />
-    <Container className="mt-5">
-      <Row>
-        <Col sm={12}>
-          <h2>Welcome to the best Mexican Food in New Haven!</h2>
-          <p>
-            Turpis nunc eget lorem dolor. <a href="/">Maecenas accumsan</a>{" "}
-            lacus vel facilisis volutpat est velit egestas dui. Sit amet
-            porttitor eget dolor morbi non. Massa sed elementum tempus egestas
-            sed sed. Diam vel quam elementum pulvinar etiam. Pharetra diam sit
-            amet nisl suscipit adipiscing bibendum est. Orci phasellus egestas
-            tellus rutrum tellus pellentesque eu tincidunt tortor. Eget velit
-            aliquet sagittis id.
-          </p>
-          <p>
-            Nunc pulvinar sapien et ligula ullamcorper malesuada proin.
-            Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-            fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-            sagittis aliquam malesuada bibendum. Et tortor consequat id porta
-            nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices mi
-            tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-            fermentum dui faucibus in. A pellentesque sit amet porttitor eget
-            dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
-            gravida cum sociis natoque penatibus et magnis dis.
-          </p>
-        </Col>
-      </Row>
-    </Container>
-    <Container>
-      <Row>
-        <Col sm={12}>
-          <h3>Try some of our favorite bites!</h3>
-        </Col>
-      </Row>
-      <Row className="justify-content-md-between">
-        {item.nodes.map(item => {
-          return (
-            item.popular === true && (
-              <Col
-                md={4}
-                sm={12}
-                // className="m-0"
-                key={`popular-item-${item.slug}`}
-              >
-                <Link to={`/${item.slug}`} title={item.title}>
-                  <GatsbyImage
-                    image={item.featuredImage.gatsbyImageData}
-                    alt={item.title}
-                  />
-                  <h4
-                    style={{
-                      marginTop: `1rem`,
-                      marginBottom: `0`,
-                    }}
-                  >
-                    {item.title}
-                  </h4>
-                </Link>
-                <div>{renderRichText(item.description, options)}</div>
-              </Col>
+  <HomeContainer>
+    <Layout>
+      <SEO title="Home" />
+      <Slideshow />
+      <Container className="mt-5">
+        <Row>
+          <Col sm={12}>
+            <h2>Welcome to the best Mexican Food in New Haven!</h2>
+            <p>
+              Turpis nunc eget lorem dolor. <a href="/">Maecenas accumsan</a>{" "}
+              lacus vel facilisis volutpat est velit egestas dui. Sit amet
+              porttitor eget dolor morbi non. Massa sed elementum tempus egestas
+              sed sed. Diam vel quam elementum pulvinar etiam. Pharetra diam sit
+              amet nisl suscipit adipiscing bibendum est. Orci phasellus egestas
+              tellus rutrum tellus pellentesque eu tincidunt tortor. Eget velit
+              aliquet sagittis id.
+            </p>
+            <p>
+              Nunc pulvinar sapien et ligula ullamcorper malesuada proin.
+              Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
+              fringilla ut morbi tincidunt augue interdum velit. Sapien nec
+              sagittis aliquam malesuada bibendum. Et tortor consequat id porta
+              nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices
+              mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
+              fermentum dui faucibus in. A pellentesque sit amet porttitor eget
+              dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
+              gravida cum sociis natoque penatibus et magnis dis.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col sm={12}>
+            <h3>Try some of our favorite bites!</h3>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-between">
+          {item.nodes.map(item => {
+            return (
+              item.popular === true && (
+                <Col md={3} sm={4} xs={6} key={`popular-item-${item.slug}`}>
+                  <Link to={`/${item.slug}`} title={item.title}>
+                    <GatsbyImage
+                      image={item.featuredImage.gatsbyImageData}
+                      alt={item.title}
+                    />
+                    <h4
+                      style={{
+                        marginTop: `1rem`,
+                        marginBottom: `0`,
+                      }}
+                    >
+                      {item.title}
+                    </h4>
+                    <div>{renderRichText(item.description, options)}</div>
+                  </Link>
+                </Col>
+              )
             )
-          )
-        })}
-      </Row>
-    </Container>
-    <Container>
-      <Row>
-        <Col sm={12}>
-          <h3>Follow us on Instagram for Promotions and Updates!</h3>
-        </Col>
-      </Row>
-      <Row className="justify-content-md-between">
-        <Col sm={12}>
-          <InstagramFeed />
-        </Col>
-      </Row>
-    </Container>
-  </Layout>
+          })}
+        </Row>
+      </Container>
+      <InstagramFeed />
+    </Layout>
+  </HomeContainer>
 )
 
 export default IndexPage
@@ -132,4 +120,7 @@ export const query = graphql`
       }
     }
   }
+`
+const HomeContainer = styled.div`
+  background: ${variables.paleYellow};
 `
