@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "react-bootstrap/Container"
@@ -7,7 +8,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
-import * as styles from "../components/about-css-modules.module.css"
+import * as styles from "../components/css/about-css-modules.module.css"
 
 const User = props => (
   <div className={styles.user}>
@@ -69,55 +70,11 @@ const about = () => {
               dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
               gravida cum sociis natoque penatibus et magnis dis.
             </p>
-            <p>
-              Nunc ulvinar sapien et ligula ullamcorper malesuada proin.
-              Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-              fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-              sagittis aliquam malesuada bibendum. Et tortor consequat id porta
-              nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices
-              mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-              fermentum dui faucibus in. A pellentesque sit amet porttitor eget
-              dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
-              gravida cum sociis natoque penatibus et magnis dis.
-            </p>
-            <p>
-              Nunc ulvinar sapien et ligula ullamcorper malesuada proin.
-              Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-              fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-              sagittis aliquam malesuada bibendum. Et tortor consequat id porta
-              nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices
-              mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-              fermentum dui faucibus in. A pellentesque sit amet porttitor eget
-              dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
-              gravida cum sociis natoque penatibus et magnis dis.
-            </p>
-            <p>
-              Nunc ulvinar sapien et ligula ullamcorper malesuada proin.
-              Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-              fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-              sagittis aliquam malesuada bibendum. Et tortor consequat id porta
-              nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices
-              mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-              fermentum dui faucibus in. A pellentesque sit amet porttitor eget
-              dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
-              gravida cum sociis natoque penatibus et magnis dis.
-            </p>
-            <p>
-              Nunc ulvinar sapien et ligula ullamcorper malesuada proin.
-              Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-              fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-              sagittis aliquam malesuada bibendum. Et tortor consequat id porta
-              nibh venenatis cras. Elit sed vulputate mi sit amet. At ultrices
-              mi tempus imperdiet. Dignissim diam quis enim lobortis scelerisque
-              fermentum dui faucibus in. A pellentesque sit amet porttitor eget
-              dolor morbi. Sollicitudin aliquam ultrices sagittis orci a. Eget
-              gravida cum sociis natoque penatibus et magnis dis.
-            </p>
           </Col>
         </Row>
       </Container>
       <Container>
-        <Row>
+        <Row className="pb-5">
           <Col xs={12} sm={6}>
             <User
               username="Bernard Lanche"
@@ -134,6 +91,7 @@ const about = () => {
           </Col>
         </Row>
       </Container>
+      <InstagramFeed />
     </Layout>
   )
 }

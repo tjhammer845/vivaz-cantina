@@ -62,10 +62,6 @@ const Footer = () => (
 export default Footer
 const StyledFooter = styled.footer`
   background: ${variables.purple};
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 `
 const MenuLinks = styled.nav`
     display: flex;
@@ -87,7 +83,7 @@ const MenuLinks = styled.nav`
           text-decoration: none;
           color: white;
           transition: color 300ms;
-
+          font-weight: bold;
           :hover {
             color: ${variables.yellow};
           }

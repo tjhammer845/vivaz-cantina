@@ -70,7 +70,7 @@ const MenuLinks = styled.nav`
       display: inline-block;
     }
     li.home:hover ~ hr {
-      margin-right: 81%;
+      margin-right: 81.1%;
     }
     li.menu:hover ~ hr {
       margin-right: 55.4%;
@@ -79,7 +79,7 @@ const MenuLinks = styled.nav`
       margin-right: 31.3%;
     }
     li.contact:hover ~ hr {
-      margin-right: 10%;
+      margin-right: 9.2%;
     }
   }
 `

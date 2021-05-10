@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import TopHeader from "./top-header"
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.css"
+import "./css/layout.css"
 import Scroll from "../components/scroll-to-top"
 import { ParallaxProvider } from "react-scroll-parallax"
 import styled from "styled-components"
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <SiteContainer>
       <TopHeader />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <StyledMain>
@@ -36,14 +36,19 @@ const Layout = ({ children }) => {
       </StyledMain>
       <Footer />
       <Scroll showBelow={250} />
-    </>
+    </SiteContainer>
   )
 }
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 export default Layout
-
+const SiteContainer = styled.div`
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+`
 const StyledMain = styled.main`
-  padding-bottom: 7rem;
+  flex: 1;
+  min-height: auto;
 `

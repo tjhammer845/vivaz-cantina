@@ -1,7 +1,4 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/layout"
 import Slideshow from "../components/home-slideshow"
 import SEO from "../components/seo"
@@ -9,37 +6,16 @@ import InstagramFeed from "../components/instagram-feed"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { variables } from "../utils/variables"
+import PopularItems from "../components/popular-items"
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-left">{children}</p>
-const options = {
-  renderMark: {
-    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-  },
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-    [BLOCKS.EMBEDDED_ASSET]: node => {
-      return (
-        <>
-          <h2>Embedded Asset</h2>
-          <pre>
-            <code>{JSON.stringify(node, null, 2)}</code>
-          </pre>
-        </>
-      )
-    },
-  },
-}
-
-const IndexPage = ({ data: { item } }) => (
+const IndexPage = () => (
   <HomeContainer>
     <Layout>
       <SEO title="Home" />
       <Slideshow />
-      <Container className="mt-5">
+      <Container className="mt-5 mb-4">
         <Row>
           <Col sm={12}>
             <h2>Welcome to the best Mexican Food in New Haven!</h2>
@@ -66,61 +42,13 @@ const IndexPage = ({ data: { item } }) => (
           </Col>
         </Row>
       </Container>
-      <Container>
-        <Row>
-          <Col sm={12}>
-            <h3>Try some of our favorite bites!</h3>
-          </Col>
-        </Row>
-        <Row className="justify-content-md-between">
-          {item.nodes.map(item => {
-            return (
-              item.popular === true && (
-                <Col md={3} sm={4} xs={6} key={`popular-item-${item.slug}`}>
-                  <Link to={`/${item.slug}`} title={item.title}>
-                    <GatsbyImage
-                      image={item.featuredImage.gatsbyImageData}
-                      alt={item.title}
-                    />
-                    <h4
-                      style={{
-                        marginTop: `1rem`,
-                        marginBottom: `0`,
-                      }}
-                    >
-                      {item.title}
-                    </h4>
-                    <div>{renderRichText(item.description, options)}</div>
-                  </Link>
-                </Col>
-              )
-            )
-          })}
-        </Row>
-      </Container>
+      <PopularItems />
       <InstagramFeed />
     </Layout>
   </HomeContainer>
 )
-
 export default IndexPage
-export const query = graphql`
-  {
-    item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
-      nodes {
-        title
-        slug
-        popular
-        description {
-          raw
-        }
-        featuredImage {
-          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
-        }
-      }
-    }
-  }
-`
 const HomeContainer = styled.div`
   background: ${variables.paleYellow};
+  padding-top: 10rem;
 `

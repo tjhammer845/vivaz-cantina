@@ -1,0 +1,44 @@
+/*** MULTIPLE CAROUSEL STYLES ***/
+
+.mltp-carousel-container {
+  width: 100%;
+  z-index: 0;
+}
+.mltp-carousel-item {
+  display: block;
+}
+.mltp-carousel-button-group {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+}
+.mltp-carousel-button-group > button {
+  z-index: 1;
+  border-radius: 100%;
+  min-width: 60px;
+  min-height: 60px;
+}
+.mltp-carousel-button-group > button::before {
+  font-size: 25px;
+  line-height: 1;
+}
+@media only screen and (min-width: 1300px) {
+  .mltp-carousel-button-group {
+    left: -50px;
+    right: -50px;
+  }
+  .mltp-carousel-button-group > button {
+    min-width: 50px;
+    min-height: 50px;
+  }
+  .mltp-carousel-button-group > button::before {
+    font-size: 20px;
+  }
+  .mltp-carousel-button-group > .react-multiple-carousel__arrow--left {
+    left: 0;
+  }
+  .mltp-carousel-button-group > .react-multiple-carousel__arrow--right {
+    right: 0;
+  }
+}

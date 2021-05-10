@@ -48,7 +48,7 @@ const MenuIconContainer = styled.div`
   right: 7px;
   padding: 0.25rem 0;
   border-radius: 5px;
-  background: ${variables.darkOrange};
+  background: ${variables.transDarkOrange};
   @media ${breakpoints.lg} {
     right: 0;
   }

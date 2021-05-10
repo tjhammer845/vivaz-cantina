@@ -9,6 +9,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import PopularItems from "../components/popular-items"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-left">{children}</p>
@@ -66,6 +67,7 @@ const ItemTemplate = ({ data }) => {
           </Col>
         </Row>
       </Container>
+      <PopularItems />
     </Layout>
   )
 }

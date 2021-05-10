@@ -11,19 +11,14 @@ import Col from "react-bootstrap/Col"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { variables } from "../utils/variables"
 import styled from "styled-components"
+import TruncateMarkup from "react-truncate-markup"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => (
-  <p
-    className="align-left"
-    style={{
-      wordBreak: "break-word",
-    }}
-  >
-    {children}
-  </p>
+  <TruncateMarkup lines={2}>
+    <p className="align-left">{children}</p>
+  </TruncateMarkup>
 )
-
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
@@ -69,7 +64,7 @@ const Menu = ({ data: { item } }) => (
             <p>Appetizers Description</p>
           </Col>
         </Row>
-        <Row className="justify-content-md-between">
+        <Row className="justify-content-md-between pb-5">
           {item.nodes.map(item => {
             return (
               item.menuSection === "Appetizers" && (
@@ -80,7 +75,7 @@ const Menu = ({ data: { item } }) => (
                         image={item.featuredImage.gatsbyImageData}
                         alt={item.title}
                       />
-                      <StyledH4>{item.title}</StyledH4>
+                      <StyledH3>{item.title}</StyledH3>
                     </Link>
                     <div>{renderRichText(item.description, options)}</div>
                   </div>
@@ -115,7 +110,7 @@ const Menu = ({ data: { item } }) => (
                         image={item.featuredImage.gatsbyImageData}
                         alt={item.title}
                       />
-                      <StyledH4>{item.title}</StyledH4>
+                      <StyledH3>{item.title}</StyledH3>
                     </Link>
                     <div>{renderRichText(item.description, options)}</div>
                   </div>
@@ -145,7 +140,7 @@ const Menu = ({ data: { item } }) => (
                         image={item.featuredImage.gatsbyImageData}
                         alt={item.title}
                       />
-                      <StyledH4>{item.title}</StyledH4>
+                      <StyledH3>{item.title}</StyledH3>
                     </Link>
                     <div>{renderRichText(item.description, options)}</div>
                   </div>
@@ -175,7 +170,7 @@ const Menu = ({ data: { item } }) => (
                         image={item.featuredImage.gatsbyImageData}
                         alt={item.title}
                       />
-                      <StyledH4>{item.title}</StyledH4>
+                      <StyledH3>{item.title}</StyledH3>
                     </Link>
                     <div>{renderRichText(item.description, options)}</div>
                   </div>
@@ -210,7 +205,7 @@ const Menu = ({ data: { item } }) => (
                         image={item.featuredImage.gatsbyImageData}
                         alt={item.title}
                       />
-                      <StyledH4>{item.title}</StyledH4>
+                      <StyledH3>{item.title}</StyledH3>
                     </Link>
                     <div>{renderRichText(item.description, options)}</div>
                   </div>
@@ -225,9 +220,9 @@ const Menu = ({ data: { item } }) => (
       <Container>
         <Row>
           <Col sm={12} className="text-center">
-            <h3 className="mt-5">
+            <h2 className="mt-5">
               Disclaimer: pricing and availability subject to change.
-            </h3>
+            </h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -258,7 +253,7 @@ export const query = graphql`
     }
   }
 `
-const StyledH4 = styled.h4`
+const StyledH3 = styled.h3`
   color: black;
   font-size: 1.25rem;
   margin-top: 1rem;

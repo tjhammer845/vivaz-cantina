@@ -3,6 +3,8 @@ export const variables = {
   bloodOrange: "#a52800",
   darkOrange: "#6b1b01",
   purple: "#221a41",
+  blue: "#009999",
+  green: "#339966",
   yellow: "#ffff00",
   paleYellow: "#ffc1074a",
 
@@ -12,6 +14,7 @@ export const variables = {
   transGreen: "rgba(51, 153, 102, 0.8)",
   transBlue: "rgba(0, 153, 153, 0.8)",
   transLightPurple: "rgba(153, 102, 153, 0.8)",
-  transOrange: "rgba(255, 0, 0, 0.6)",
+  transOrange: "rgba(255, 0, 0, 0.8)",
+  transDarkOrange: "rgba(107, 27, 1, 0.6)",
   transPurple: "rgba(34, 26, 65, .985)",
 }
