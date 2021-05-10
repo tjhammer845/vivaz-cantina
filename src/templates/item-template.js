@@ -10,6 +10,8 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import PopularItems from "../components/popular-items"
+import styled from "styled-components"
+import { breakpoints } from "../utils/breakpoints"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => <p className="align-left">{children}</p>
@@ -37,37 +39,39 @@ const ItemTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={data.contentfulMenu.title} />
-      <Parallax y={[-50, 50]} tagOuter="figure">
-        <GatsbyImage
-          image={image}
-          alt="About Vivaz Cantina"
-          aspectRatio={256 / 90}
-          placeholder="blurred"
-          loading="eager"
-        />
-      </Parallax>
-      <Container>
-        <Row>
-          <Col sm={12} className="mb-5">
-            <GatsbyImage
-              image={data.contentfulMenu.featuredImage.gatsbyImageData}
-              alt={data.contentfulMenu.title}
-              style={{ maxWidth: `250px` }}
-            />
-            <h4 className="mt-4 mb-2">{data.contentfulMenu.title}</h4>
-            {data.contentfulMenu.fullDescription !== null ? (
-              <div>
-                {renderRichText(data.contentfulMenu.fullDescription, options)}
-              </div>
-            ) : (
-              <div>
-                {renderRichText(data.contentfulMenu.description, options)}
-              </div>
-            )}
-          </Col>
-        </Row>
-      </Container>
-      <PopularItems />
+      <TemplateContainer>
+        <Parallax y={[-50, 50]} tagOuter="figure">
+          <GatsbyImage
+            image={image}
+            alt="About Vivaz Cantina"
+            aspectRatio={256 / 90}
+            placeholder="blurred"
+            loading="eager"
+          />
+        </Parallax>
+        <Container>
+          <Row>
+            <Col sm={12} className="mb-5">
+              <GatsbyImage
+                image={data.contentfulMenu.featuredImage.gatsbyImageData}
+                alt={data.contentfulMenu.title}
+                style={{ maxWidth: `250px` }}
+              />
+              <h4 className="mt-4 mb-2">{data.contentfulMenu.title}</h4>
+              {data.contentfulMenu.fullDescription !== null ? (
+                <div>
+                  {renderRichText(data.contentfulMenu.fullDescription, options)}
+                </div>
+              ) : (
+                <div>
+                  {renderRichText(data.contentfulMenu.description, options)}
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Container>
+        <PopularItems />
+      </TemplateContainer>
     </Layout>
   )
 }
@@ -94,5 +98,11 @@ export const query = graphql`
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
+  }
+`
+const TemplateContainer = styled.div`
+  padding-top: 6rem;
+  @media ${breakpoints.md} {
+    padding-top: 0;
   }
 `

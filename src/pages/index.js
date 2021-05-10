@@ -12,9 +12,9 @@ import { variables } from "../utils/variables"
 import PopularItems from "../components/popular-items"
 
 const IndexPage = () => (
-  <HomeContainer>
-    <Layout>
-      <SEO title="Home" />
+  <Layout>
+    <SEO title="Home" />
+    <HomeContainer>
       <Slideshow />
       <HomeContent>
         <Container className="pt-5 pb-4">
@@ -48,8 +48,8 @@ const IndexPage = () => (
       </HomeContent>
       <PopularItems />
       <InstagramFeed />
-    </Layout>
-  </HomeContainer>
+    </HomeContainer>
+  </Layout>
 )
 export default IndexPage
 const HomeContainer = styled.div`
