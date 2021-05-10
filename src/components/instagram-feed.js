@@ -136,7 +136,7 @@ const InstagramFeed = props => {
                       />
 
                       <TruncateMarkup lines={2}>
-                        <p className="text-white">{item.node.caption}</p>
+                        <p>{item.node.caption}</p>
                       </TruncateMarkup>
                     </Link>
                   </div>
@@ -165,5 +165,26 @@ const IgFeedContainer = styled.div`
   p {
     font-size: 0.85rem;
     margin-top: 0.5rem;
+    color: white;
+  }
+  a {
+    p {
+      transition: all 1s ease;
+    }
+    picture {
+      img {
+        transition: all 0.7s ease !important;
+      }
+    }
+    &:hover {
+      picture {
+        img {
+          filter: blur(3px) saturate(200%);
+        }
+      }
+      p {
+        color: ${variables.yellow};
+      }
+    }
   }
 `

@@ -86,5 +86,12 @@ const StyledHeader = styled.header`
     padding: 0.5rem;
     transition: background 300ms;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
+    svg {
+        height: fit-content;
+        transition: all 1s ease;
+     }
+     svg:hover {
+        filter: brightness(150%);
+     }
 }
 `

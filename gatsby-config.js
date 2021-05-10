@@ -20,14 +20,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `backgrounds`,
@@ -39,6 +31,14 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`, // wherever background images are stored
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
       },
     },
     `gatsby-plugin-styled-components`,

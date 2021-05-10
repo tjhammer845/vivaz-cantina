@@ -18,11 +18,16 @@
   border-radius: 100%;
   min-width: 60px;
   min-height: 60px;
+  transition: all 0.25s ease;
 }
 .mltp-carousel-button-group > button::before {
   font-size: 25px;
   line-height: 1;
 }
+.mltp-carousel-button-group > button:hover {
+  background: #a52800;
+}
+
 @media only screen and (min-width: 1300px) {
   .mltp-carousel-button-group {
     left: -50px;

@@ -40,10 +40,10 @@ export default function TopHeader() {
     <StyledTopHeader className={classes[navRef.current]}>
       <Container fluid="lg">
         <Row>
-          <Col lg={6} md={12} className="pl-lg-0">
+          <Col xs={9} className="pl-lg-0">
             <span>1-888-555-4444</span>
           </Col>
-          <Col lg={6} md={12} className="d-flex justify-content-end pr-lg-0">
+          <Col xs={3} className="d-flex justify-content-end pr-lg-0">
             <i>Instagram</i>
             <i>Facebook</i>
             <i>Twitter</i>

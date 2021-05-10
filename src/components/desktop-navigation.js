@@ -33,7 +33,7 @@ const MenuLinks = styled.nav`
       float: right;
       width: 60px;
       height: 70px;
-      margin-top: -2rem;
+      margin-top: -4rem;
       border: none;
     }
     li {
@@ -45,6 +45,7 @@ const MenuLinks = styled.nav`
 
       a {
         display: inline-block;
+        padding: 2rem 0;
         font-weight: bold;
         text-decoration: none;
         color: white;
@@ -70,10 +71,10 @@ const MenuLinks = styled.nav`
     li:hover ~ hr {
       transition: 0.3s ease-in-out;
       display: flex;
-      margin-bottom: -2rem;
+      margin-bottom: -4rem;
     }
     li.home:hover ~ hr {
-      margin-right: 81.3%;
+      margin-right: 81.2%;
     }
     li.menu:hover ~ hr {
       margin-right: 55.5%;

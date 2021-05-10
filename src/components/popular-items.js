@@ -16,7 +16,7 @@ const Bold = ({ children }) => (
 )
 const Text = ({ children }) => (
   <TruncateMarkup lines={2}>
-    <p className="align-left mb-0 text-white">{children}</p>
+    <p className="align-left mb-0">{children}</p>
   </TruncateMarkup>
 )
 const options = {
@@ -103,5 +103,28 @@ const PopularContainer = styled.div`
     color: white;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+  }
+  a {
+    h3,
+    p {
+      color: white;
+      transition: all 1s ease;
+    }
+    picture {
+      img {
+        transition: all 0.7s ease !important;
+      }
+    }
+    &:hover {
+      picture {
+        img {
+          filter: blur(3px) saturate(200%);
+        }
+      }
+      h3,
+      p {
+        color: ${variables.yellow};
+      }
+    }
   }
 `
