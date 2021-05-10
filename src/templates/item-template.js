@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import PopularItems from "../components/popular-items"
 import styled from "styled-components"
+import { variables } from "../utils/variables"
 import { breakpoints } from "../utils/breakpoints"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>

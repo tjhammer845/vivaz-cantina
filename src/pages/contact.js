@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
 import styled from "styled-components"
+import { variables } from "../utils/variables"
 import { breakpoints } from "../utils/breakpoints"
 
 const contact = () => {

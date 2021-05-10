@@ -50,8 +50,8 @@ const SlideShow = () => {
 }
 export default SlideShow
 const CarouselContainer = styled.div`
-  margin-top: 6rem;
+  padding-top: 6rem;
   @media ${breakpoints.md} {
-    margin-top: 0;
+    padding-top: 0;
   }
 `

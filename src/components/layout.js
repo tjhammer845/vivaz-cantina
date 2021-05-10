@@ -15,6 +15,7 @@ import "./css/layout.css"
 import Scroll from "../components/scroll-to-top"
 import { ParallaxProvider } from "react-scroll-parallax"
 import styled from "styled-components"
+import headerBg from "../images/backgrounds/header-bg.png"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -47,6 +48,8 @@ const SiteContainer = styled.div`
   display: flex;
   height: 100vh;
   flex-direction: column;
+  background-image: url(${headerBg});
+  background-repeat: repeat-x;
 `
 const StyledMain = styled.main`
   flex: 1;
