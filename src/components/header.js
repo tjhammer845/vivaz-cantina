@@ -81,7 +81,7 @@ const StyledHeader = styled.header`
     position: fixed;
     height: 8rem;
     width: 100%;
-    top: 36px;
+    top: 2rem;
     z-index: 20;
     padding: 0.5rem;
     transition: background 300ms;
