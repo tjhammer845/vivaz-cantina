@@ -39,7 +39,7 @@ const SlideShow = () => {
               placeholder="blurred"
               loading="eager"
             />
-            <Carousel.Caption>
+            <Carousel.Caption className="d-none d-sm-block">
               <p>{image.node.base.split("-").join(" ").split(".")[0]}</p>
             </Carousel.Caption>
           </Carousel.Item>
