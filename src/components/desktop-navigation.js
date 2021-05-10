@@ -69,7 +69,7 @@ const MenuLinks = styled.nav`
       }
     }
     li:hover ~ hr {
-      transition: 0.3s ease-in-out;
+      transition: 0.2s ease-in-out;
       display: flex;
       margin-bottom: -4rem;
     }
@@ -77,13 +77,13 @@ const MenuLinks = styled.nav`
       margin-right: 81.2%;
     }
     li.menu:hover ~ hr {
-      margin-right: 55.5%;
+      margin-right: 55.45%;
     }
     li.about:hover ~ hr {
-      margin-right: 31.4%;
+      margin-right: 31.35%;
     }
     li.contact:hover ~ hr {
-      margin-right: 9.4%;
+      margin-right: 9.15%;
     }
   }
 `
