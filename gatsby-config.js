@@ -43,10 +43,30 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typography`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images-v2 must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images-v2`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2560,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

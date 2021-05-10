@@ -24,6 +24,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 }
-exports.createSchemaCustomization = ({ actions }) => {
-  actions.printTypeDefinitions({ path: "./typeDefs.txt" })
+// exports.createSchemaCustomization = ({ actions }) => {
+//   actions.printTypeDefinitions({ path: "./typeDefs.txt" })
+// }
+const { fmImagesToRelative } = require("gatsby-remark-relative-images-v2")
+
+exports.onCreateNode = ({ node }) => {
+  fmImagesToRelative(node)
 }
