@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: variables.transOrange,
   },
   appBarSolid: {
-    backgroundColor: variables.bloodOrange,
+    backgroundColor: variables.orange,
   },
 }))
 
@@ -93,6 +93,6 @@ const StyledHeader = styled.header`
     z-index: 20;
     padding: 0.5rem;
     transition: background 300ms;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.45);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
 }
 `
