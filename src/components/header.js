@@ -10,7 +10,7 @@ import DesktopNavigation from "./desktop-navigation"
 import styled from "styled-components"
 import { makeStyles } from "@material-ui/core/styles"
 import { variables } from "../utils/variables"
-import Logo from "../images/logo/logo.png"
+import Logo from "../images/logo/logo.inline.svg"
 
 const useStyles = makeStyles(theme => ({
   appBarTransparent: {
@@ -43,12 +43,7 @@ export default function Header({ siteTitle }) {
   }, [])
   return (
     <StyledHeader className={classes[navRef.current]}>
-      <Container
-        fluid="lg"
-        style={{
-          padding: `2.5rem 0`,
-        }}
-      >
+      <Container fluid="lg">
         <Row>
           <Col lg={6} md={12}>
             <Link
@@ -60,11 +55,7 @@ export default function Header({ siteTitle }) {
               }}
             >
               <h1 style={{ margin: 0 }}>
-                <img
-                  src={Logo}
-                  alt={siteTitle}
-                  className="mt-n5 mb-n5 img-fluid"
-                />
+                <Logo alt={siteTitle} className="mt-n4 mb-n4 img-fluid" />
               </h1>
             </Link>
           </Col>
@@ -86,6 +77,7 @@ Header.defaultProps = {
 
 const StyledHeader = styled.header`
     display: flex;
+    align-items: center;
     position: fixed;
     height: 8rem;
     width: 100%;

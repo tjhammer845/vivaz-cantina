@@ -19,6 +19,8 @@ const MenuLinks = styled.nav`
   @media ${breakpoints.lg} {
     display: flex;
     justify-content: flex-end;
+    height: 100%;
+    align-items: center;
   }
   ul {
     width: 100%;
@@ -53,7 +55,7 @@ const MenuLinks = styled.nav`
         &.active {
           color: ${variables.yellow};
           hr {
-            display: inline-block;
+            display: flex;
             float: left;
             margin-top: -0.5rem;
             margin-left: -2rem;
@@ -67,19 +69,20 @@ const MenuLinks = styled.nav`
     }
     li:hover ~ hr {
       transition: 0.3s ease-in-out;
-      display: inline-block;
+      display: flex;
+      margin-bottom: -2rem;
     }
     li.home:hover ~ hr {
-      margin-right: 81.1%;
+      margin-right: 81.3%;
     }
     li.menu:hover ~ hr {
-      margin-right: 55.4%;
+      margin-right: 55.5%;
     }
     li.about:hover ~ hr {
-      margin-right: 31.3%;
+      margin-right: 31.4%;
     }
     li.contact:hover ~ hr {
-      margin-right: 9.2%;
+      margin-right: 9.4%;
     }
   }
 `

@@ -47,7 +47,7 @@ export default Scroll
 
 const useStyles = makeStyles(theme => ({
   toTop: {
-    zIndex: 2,
+    zIndex: 100,
     position: "fixed",
     bottom: "8.5vh",
     backgroundColor: variables.transOrange,
@@ -58,11 +58,11 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: variables.bloodOrange,
     },
     [theme.breakpoints.up("xs")]: {
-      right: "5%",
+      right: "2%",
       backgroundColor: variables.transOrange,
     },
     [theme.breakpoints.up("lg")]: {
-      right: "6.5%",
+      right: "2%",
     },
   },
 }))

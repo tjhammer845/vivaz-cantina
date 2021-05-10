@@ -47,13 +47,13 @@ const Footer = () => (
           lg={7}
           className="d-flex justify-content-center justify-content-md-end"
         >
-          <p className="text-white m-0">
+          <StyledP className="m-0">
             &copy; {new Date().getFullYear()} Vivaz Cantina. Built by
             {` `}
             <a className="text-white" href="https://tom.thecaffeineteam.com">
               The Caffeine Team.
             </a>
-          </p>
+          </StyledP>
         </Col>
       </Row>
     </Container>
@@ -74,7 +74,7 @@ const MenuLinks = styled.nav`
       margin: 0;
       @media ${breakpoints.md} {
         justify-content: space-between;
-    }
+      }
       li {
         list-style: none;
         margin: 0;
@@ -90,5 +90,12 @@ const MenuLinks = styled.nav`
         }
       }
     }
+  }
+`
+const StyledP = styled.nav`
+  font-size: 0.85rem;
+  color: white;
+  a:hover {
+    text-decoration: underline;
   }
 `
