@@ -31,15 +31,13 @@ const Layout = ({ children }) => {
 
   return (
     <SiteContainer>
-      <LayoutContainer>
-        <TopHeader />
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <StyledMain>
-          <ParallaxProvider>{children}</ParallaxProvider>
-        </StyledMain>
-        <Footer />
-        <Scroll showBelow={250} />
-      </LayoutContainer>
+      <TopHeader />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <StyledMain>
+        <ParallaxProvider>{children}</ParallaxProvider>
+      </StyledMain>
+      <Footer />
+      <Scroll showBelow={250} />
     </SiteContainer>
   )
 }
@@ -50,15 +48,11 @@ export default Layout
 const SiteContainer = styled.div`
   background-image: url(${headerBg}), url(${footerBg});
   background-repeat: repeat-x;
-  background-position: top left, bottom left; ;
-`
-const LayoutContainer = styled.div`
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  background-image: url(${headerBg}), url(${footerBg});
-  background-repeat: repeat-x;
   background-position: top left, bottom left;
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
 `
 const StyledMain = styled.main`
   flex: 1;
