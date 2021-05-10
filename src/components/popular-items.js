@@ -68,7 +68,13 @@ const PopularItems = () => {
           {data.item.nodes.map(item => {
             return (
               item.popular === true && (
-                <Col md={3} sm={4} xs={6} key={`popular-item-${item.slug}`}>
+                <Col
+                  md={3}
+                  sm={4}
+                  xs={6}
+                  className="pb-4"
+                  key={`popular-item-${item.slug}`}
+                >
                   <Link to={`/${item.slug}`} title={item.title}>
                     <GatsbyImage
                       image={item.featuredImage.gatsbyImageData}
@@ -90,10 +96,10 @@ export default PopularItems
 const PopularContainer = styled.div`
   background: ${variables.green};
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   @media ${breakpoints.md} {
-    padding-top: rem;
-    padding-botom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
   h2 {
     font-weight: bold;
