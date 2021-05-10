@@ -35,6 +35,9 @@ const SlideShow = () => {
             <GatsbyImage
               image={image.node.childImageSharp.gatsbyImageData}
               alt={image.node.base.split("-").join(" ").split(".")[0]}
+              aspectRatio={256 / 90}
+              placeholder="blurred"
+              loading="eager"
             />
             <Carousel.Caption>
               <p>{image.node.base.split("-").join(" ").split(".")[0]}</p>

@@ -131,6 +131,8 @@ const InstagramFeed = props => {
                           item.node.localImage.childImageSharp.gatsbyImageData
                         }
                         alt={`@${item.node.username}`}
+                        placeholder="blurred"
+                        loading="eager"
                       />
 
                       <TruncateMarkup lines={2}>
