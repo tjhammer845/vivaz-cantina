@@ -45,7 +45,7 @@ const MenuIconContainer = styled.div`
   align-items: center;
   position: absolute;
   top: 2.5rem;
-  right: 7px;
+  right: 0.5rem;
   padding: 0.25rem 0;
   border-radius: 5px;
   background: ${variables.transDarkOrange};
@@ -53,7 +53,6 @@ const MenuIconContainer = styled.div`
     right: 0;
   }
 `
-
 const MenuIcon = styled.button`
   cursor: pointer;
   background: transparent;
