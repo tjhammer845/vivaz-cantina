@@ -38,17 +38,12 @@ export default function TopHeader() {
   }, [])
   return (
     <StyledTopHeader className={classes[navRef.current]}>
-      <Container
-        fluid="lg"
-        style={{
-          padding: `0`,
-        }}
-      >
+      <Container fluid="lg">
         <Row>
-          <Col lg={6} md={12}>
+          <Col lg={6} md={12} className="pl-lg-0">
             <span>1-888-555-4444</span>
           </Col>
-          <Col lg={6} md={12} className="d-flex justify-content-end">
+          <Col lg={6} md={12} className="d-flex justify-content-end pr-lg-0">
             <i>Instagram</i>
             <i>Facebook</i>
             <i>Twitter</i>
@@ -60,6 +55,7 @@ export default function TopHeader() {
 }
 const StyledTopHeader = styled.header`
     display: flex;
+    align-items: center;
     position: fixed;
     height: 2rem;
     width: 100%;

@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import styled from "styled-components"
+import { breakpoints } from "../utils/breakpoints"
 import { variables } from "../utils/variables"
 import PopularItems from "../components/popular-items"
 
@@ -50,5 +51,8 @@ const IndexPage = () => (
 export default IndexPage
 const HomeContainer = styled.div`
   background: ${variables.paleYellow};
-  padding-top: 10rem;
+  padding-top: 4rem;
+  @media ${breakpoints.md} {
+    padding-top: 10rem;
+  }
 `

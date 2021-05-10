@@ -45,7 +45,7 @@ export default function Header({ siteTitle }) {
     <StyledHeader className={classes[navRef.current]}>
       <Container fluid="lg">
         <Row>
-          <Col lg={6} md={12}>
+          <Col lg={6} md={12} className="pl-4 pr-4 pl-lg-0">
             <Link
               to="/"
               title={siteTitle}
@@ -59,7 +59,7 @@ export default function Header({ siteTitle }) {
               </h1>
             </Link>
           </Col>
-          <Col lg={6} md={12}>
+          <Col lg={6} md={12} className="pr-lg-0">
             <DesktopNavigation />
             <MobileNavigation />
           </Col>
