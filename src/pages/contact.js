@@ -50,7 +50,10 @@ const contact = () => {
 }
 export default contact
 const ContactContainer = styled.div`
-  padding-top: 6rem;
+  padding-top: 7rem;
+  @media ${breakpoints.sm} {
+    padding-top: 6rem;
+  }
   @media ${breakpoints.md} {
     padding-top: 0;
   }
