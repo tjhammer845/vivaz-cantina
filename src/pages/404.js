@@ -40,7 +40,7 @@ const NotFoundPage = () => {
         <Container>
           <Row>
             <Col sm={12}>
-              <h2 className="pt-5">Page Not Found (404) </h2>
+              <h2 className="pt-5">Page Not Found (404)</h2>
               <p>
                 <p>
                   {" "}
