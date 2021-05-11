@@ -40,7 +40,7 @@ const ThankYou = () => {
         <Container>
           <Row>
             <Col sm={12}>
-              <h2>Thanks for Contacting Us!</h2>
+              <h2 className="pt-5">Thanks for Contacting Us!</h2>
               <p>
                 Your message was sent successfully. We will do our best to
                 respond in a timely manner, usually within 1-2 days.
