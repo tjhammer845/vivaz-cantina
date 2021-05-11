@@ -37,7 +37,6 @@ const SlideShow = () => {
               alt={image.node.base.split("-").join(" ").split(".")[0]}
               aspectRatio={256 / 90}
               placeholder="blurred"
-              loading="eager"
             />
             <Carousel.Caption className="d-none d-sm-block">
               <p>{image.node.base.split("-").join(" ").split(".")[0]}</p>
