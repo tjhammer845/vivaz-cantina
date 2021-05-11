@@ -1,10 +1,9 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
 import styled from "styled-components"
@@ -41,9 +40,77 @@ const contact = () => {
           <Row>
             <Col sm={12}>
               <h2>Contact Vivaz Cantina</h2>
-              <p>Form will go here.</p>
             </Col>
           </Row>
+        </Container>
+        <Container>
+          <Form
+            name="contact v1"
+            method="post"
+            data-netlify="true"
+            onSubmit="submit"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="vivaz-form" value="contact" />
+            <p hidden>
+              <label>
+                Don't fill this out: <input name="bot-field" />
+              </label>
+            </p>
+            <Row>
+              <Col sm={12} md={6}>
+                <Form.Group>
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control
+                    required
+                    size="lg"
+                    type="text"
+                    name="first-name"
+                  />
+                </Form.Group>
+              </Col>
+              <Col sm={12} md={6}>
+                <Form.Group>
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control
+                    required
+                    size="lg"
+                    type="text"
+                    name="last-name"
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12} md={6}>
+                <Form.Group>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control required size="lg" type="text" name="email" />
+                </Form.Group>
+              </Col>
+              <Col sm={12} md={6}>
+                <Form.Group>
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control size="lg" type="text" name="phone" />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12}>
+                <Form.Group>
+                  <Form.Label>Message</Form.Label>
+                  <Form.Control
+                    required
+                    as="textarea"
+                    rows="3"
+                    placeholder="Enter your message here."
+                    name="info"
+                  />
+                </Form.Group>
+                <Button type="sumbit">Send</Button>
+              </Col>
+            </Row>
+          </Form>
         </Container>
       </ContactContainer>
     </Layout>
