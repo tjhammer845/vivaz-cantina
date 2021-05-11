@@ -44,16 +44,27 @@ const contact = () => {
           </Row>
         </Container>
         <Container>
-          <Form
-            name="contact v1"
-            method="post"
-            data-netlify="true"
-            action="/thank-you"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="bot-field" />
+          <Form name="contact" netlify netlify-honeypot="bot-field" hidden>
+            <input type="text" name="first-name" />
+            <input type="text" name="last-name" />
+            <input type="email" name="email" />
+            <input type="tel" name="phone" />
+            <textarea name="message"></textarea>
+          </Form>
+          <Form name="contact v1" method="post" action="/thank-you">
+            <input type="hidden" name="form-name" value="contact" />
             <Row>
               <Col sm={12} md={6}>
+                <form
+                  name="contact"
+                  netlify
+                  netlify-honeypot="bot-field"
+                  hidden
+                >
+                  <input type="text" name="name" />
+                  <input type="email" name="email" />
+                  <textarea name="message"></textarea>
+                </form>
                 <Form.Group controlId="formBasicFirstName">
                   <Form.Label htmlFor="first-name">First Name</Form.Label>
                   <Form.Control
