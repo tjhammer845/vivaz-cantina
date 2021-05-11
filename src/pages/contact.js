@@ -48,20 +48,14 @@ const contact = () => {
             name="contact v1"
             method="post"
             data-netlify="true"
-            onSubmit="submit"
-            action="/thank-you/"
+            action="/thank-you"
             data-netlify-honeypot="bot-field"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don't fill this out: <input name="bot-field" />
-              </label>
-            </p>
+            <input type="hidden" name="bot-field" />
             <Row>
               <Col sm={12} md={6}>
                 <Form.Group controlId="formBasicFirstName">
-                  <Form.Label>First Name</Form.Label>
+                  <Form.Label htmlFor="first-name">First Name</Form.Label>
                   <Form.Control
                     required
                     size="lg"
@@ -72,7 +66,7 @@ const contact = () => {
               </Col>
               <Col sm={12} md={6}>
                 <Form.Group controlId="formBasicLastName">
-                  <Form.Label>Last Name</Form.Label>
+                  <Form.Label htmlFor="last-name">Last Name</Form.Label>
                   <Form.Control
                     required
                     size="lg"
@@ -85,13 +79,13 @@ const contact = () => {
             <Row>
               <Col sm={12} md={6}>
                 <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email</Form.Label>
+                  <Form.Label htmlFor="email">Email</Form.Label>
                   <Form.Control required size="lg" type="email" name="email" />
                 </Form.Group>
               </Col>
               <Col sm={12} md={6}>
                 <Form.Group controlId="formBasicPhone">
-                  <Form.Label>Phone (Optional)</Form.Label>
+                  <Form.Label htmlFor="phone">Phone (Optional)</Form.Label>
                   <Form.Control size="lg" type="tel" name="phone" />
                 </Form.Group>
               </Col>
@@ -99,16 +93,23 @@ const contact = () => {
             <Row>
               <Col sm={12}>
                 <Form.Group controlId="formBasicMessage">
-                  <Form.Label>Message</Form.Label>
+                  <Form.Label htmlFor="message">Message</Form.Label>
                   <Form.Control
                     required
                     as="textarea"
                     rows="3"
                     placeholder="Enter your message here."
-                    name="info"
+                    name="message"
                   />
                 </Form.Group>
-                <Button type="sumbit">Send</Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12}>
+                <Button type="submit">Send</Button>
+                <Button type="reset" value="Eraser">
+                  Clear Form
+                </Button>
               </Col>
             </Row>
           </Form>
