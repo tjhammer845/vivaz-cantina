@@ -49,6 +49,7 @@ const contact = () => {
             method="post"
             data-netlify="true"
             onSubmit="submit"
+            action="/thank-you/"
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="vivaz-form" value="contact" />
@@ -59,7 +60,7 @@ const contact = () => {
             </p>
             <Row>
               <Col sm={12} md={6}>
-                <Form.Group>
+                <Form.Group controlId="formBasicFirstName">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control
                     required
@@ -70,7 +71,7 @@ const contact = () => {
                 </Form.Group>
               </Col>
               <Col sm={12} md={6}>
-                <Form.Group>
+                <Form.Group controlId="formBasicLastName">
                   <Form.Label>Last Name</Form.Label>
                   <Form.Control
                     required
@@ -83,21 +84,21 @@ const contact = () => {
             </Row>
             <Row>
               <Col sm={12} md={6}>
-                <Form.Group>
+                <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control required size="lg" type="text" name="email" />
+                  <Form.Control required size="lg" type="email" name="email" />
                 </Form.Group>
               </Col>
               <Col sm={12} md={6}>
-                <Form.Group>
-                  <Form.Label>Phone</Form.Label>
-                  <Form.Control size="lg" type="text" name="phone" />
+                <Form.Group controlId="formBasicPhone">
+                  <Form.Label>Phone (Optional)</Form.Label>
+                  <Form.Control size="lg" type="tel" name="phone" />
                 </Form.Group>
               </Col>
             </Row>
             <Row>
               <Col sm={12}>
-                <Form.Group>
+                <Form.Group controlId="formBasicMessage">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
                     required

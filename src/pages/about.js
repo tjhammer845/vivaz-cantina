@@ -10,7 +10,6 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
 import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
-import { variables } from "../utils/variables"
 import * as styles from "../components/css/about-css-modules.module.css"
 
 const User = props => (
