@@ -47,12 +47,12 @@ const contact = () => {
           <Form
             name="contact v1"
             method="post"
-            netlify
             data-netlify="true"
             action="/thank-you"
-            data-netlify-honeypot="bot-field"
+            netlify-honeypot="bot-field"
           >
             <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <Row>
               <Col sm={12} md={6}>
                 <Form.Group controlId="formBasicFirstName">
