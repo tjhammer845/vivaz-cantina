@@ -44,6 +44,8 @@ const PopularItems = () => {
       item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
         nodes {
           title
+          currency
+          price
           slug
           popular
           description {
@@ -80,6 +82,10 @@ const PopularItems = () => {
                       image={item.featuredImage.gatsbyImageData}
                       alt={item.title}
                     />
+                    <span className="p-2 font-weight-bold">
+                      {item.currency}
+                      {item.price}
+                    </span>
                     <h3>{item.title}</h3>
                     <div>{renderRichText(item.description, options)}</div>
                   </Link>
@@ -121,6 +127,14 @@ const PopularContainer = styled.div`
         transition: all 0.7s ease !important;
       }
     }
+    span {
+      position: absolute;
+      top: 0px;
+      right: 0.8rem;
+      font-size: 0.85rem;
+      color: white;
+      background: ${variables.transLightPurple};
+    }
     &:hover {
       picture {
         img {
@@ -128,7 +142,8 @@ const PopularContainer = styled.div`
         }
       }
       h3,
-      p {
+      p,
+      span {
         color: ${variables.yellow};
       }
     }

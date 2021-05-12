@@ -41,6 +41,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typography`,
     `gatsby-plugin-react-helmet`,

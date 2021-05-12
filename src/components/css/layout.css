@@ -172,6 +172,17 @@ hr {
   border: none;
   height: 1px;
 }
+button {
+  background-color: #a52800 !important;
+  border-color: #a52800 !important;
+  font-weight: bold !important;
+  padding-top: 0.65rem !important;
+  padding-bottom: 0.65rem !important;
+}
+button:hover {
+  background-color: #ff0000 !important;
+  border-color: #a52800 !important;
+}
 button,
 input,
 optgroup,

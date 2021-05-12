@@ -129,6 +129,9 @@ const MenuLinks = styled.nav`
         :active {
           color: ${variables.yellow};
         }
+        hr {
+          display: none;
+        }
       }
     }
   }

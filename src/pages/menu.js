@@ -81,7 +81,13 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         />
-                        <h3>{item.title}</h3>
+                        <span className="p-2 font-weight-bold">
+                          {item.currency}
+                          {item.price}
+                        </span>
+                        <TruncateMarkup lines={1}>
+                          <h3>{item.title}</h3>
+                        </TruncateMarkup>
                         <div>{renderRichText(item.description, options)}</div>
                       </Link>
                     </div>
@@ -116,7 +122,13 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         />
-                        <h3>{item.title}</h3>
+                        <span className="p-2 font-weight-bold">
+                          {item.currency}
+                          {item.price}
+                        </span>
+                        <TruncateMarkup lines={1}>
+                          <h3>{item.title}</h3>
+                        </TruncateMarkup>
                         <div>{renderRichText(item.description, options)}</div>
                       </Link>
                     </div>
@@ -146,7 +158,13 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         />
-                        <h3>{item.title}</h3>
+                        <span className="p-2 font-weight-bold">
+                          {item.currency}
+                          {item.price}
+                        </span>
+                        <TruncateMarkup lines={1}>
+                          <h3>{item.title}</h3>
+                        </TruncateMarkup>
                         <div>{renderRichText(item.description, options)}</div>
                       </Link>
                     </div>
@@ -176,7 +194,13 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         />
-                        <h3>{item.title}</h3>
+                        <span className="p-2 font-weight-bold">
+                          {item.currency}
+                          {item.price}
+                        </span>
+                        <TruncateMarkup lines={1}>
+                          <h3>{item.title}</h3>
+                        </TruncateMarkup>
                         <div>{renderRichText(item.description, options)}</div>
                       </Link>
                     </div>
@@ -211,7 +235,13 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         />
-                        <h3>{item.title}</h3>
+                        <span className="p-2 font-weight-bold">
+                          {item.currency}
+                          {item.price}
+                        </span>
+                        <TruncateMarkup lines={1}>
+                          <h3>{item.title}</h3>
+                        </TruncateMarkup>
                         <div>{renderRichText(item.description, options)}</div>
                       </Link>
                     </div>
@@ -249,6 +279,8 @@ export const query = graphql`
       nodes {
         menuSection
         title
+        currency
+        price
         slug
         description {
           raw
@@ -276,6 +308,14 @@ const MenuContainer = styled.div`
         transition: all 0.7s ease !important;
       }
     }
+    span {
+      position: absolute;
+      top: 1.05rem;
+      right: 1.9rem;
+      font-size: 0.85rem;
+      color: white;
+      background: ${variables.transLightPurple};
+    }
     &:hover {
       picture {
         img {
@@ -284,6 +324,9 @@ const MenuContainer = styled.div`
       }
       h3 {
         color: ${variables.bloodOrange};
+      }
+      span {
+        color: ${variables.yellow};
       }
       p {
         color: #000;

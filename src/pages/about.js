@@ -42,7 +42,6 @@ const about = () => {
           <GatsbyImage
             image={image}
             alt="About Vivaz Cantina"
-            aspectRatio={256 / 90}
             placeholder="blurred"
             loading="lazy"
           />

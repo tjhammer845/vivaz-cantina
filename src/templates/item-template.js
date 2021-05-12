@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { navigate, graphql } from "gatsby"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/layout"
@@ -9,9 +9,9 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 import PopularItems from "../components/popular-items"
 import styled from "styled-components"
-import { variables } from "../utils/variables"
 import { breakpoints } from "../utils/breakpoints"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
@@ -45,9 +45,8 @@ const ItemTemplate = ({ data }) => {
           <GatsbyImage
             image={image}
             alt="About Vivaz Cantina"
-            aspectRatio={256 / 90}
             placeholder="blurred"
-            loading="eager"
+            loading="lazy"
           />
         </Parallax>
         <Container>
@@ -58,7 +57,14 @@ const ItemTemplate = ({ data }) => {
                 alt={data.contentfulMenu.title}
                 style={{ maxWidth: `250px` }}
               />
-              <h4 className="mt-4 mb-2">{data.contentfulMenu.title}</h4>
+
+              <h3 className="mt-4 mb-2">
+                {data.contentfulMenu.title}{" "}
+                <span className="p-2 font-weight-bold">
+                  {data.contentfulMenu.currency}
+                  {data.contentfulMenu.price}
+                </span>
+              </h3>
               {data.contentfulMenu.fullDescription !== null ? (
                 <div>
                   {renderRichText(data.contentfulMenu.fullDescription, options)}
@@ -68,6 +74,15 @@ const ItemTemplate = ({ data }) => {
                   {renderRichText(data.contentfulMenu.description, options)}
                 </div>
               )}
+              <Button
+                className="button mt-5"
+                onClick={() => {
+                  navigate("/menu/")
+                }}
+                title="View Menu"
+              >
+                View Menu
+              </Button>
             </Col>
           </Row>
         </Container>
@@ -83,6 +98,8 @@ export const query = graphql`
   query($slug: String!) {
     contentfulMenu(slug: { eq: $slug }) {
       title
+      currency
+      price
       slug
       featuredImage {
         gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)

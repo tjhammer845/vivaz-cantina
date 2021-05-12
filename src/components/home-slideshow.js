@@ -54,6 +54,4 @@ const CarouselContainer = styled.div`
   @media ${breakpoints.md} {
     padding-top: 0;
   }
-  img {
-  }
 `
