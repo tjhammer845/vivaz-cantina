@@ -43,7 +43,7 @@ const contact = () => {
         </Container>
         <Container>
           <Row>
-            <Col md={8}>
+            <Col md={9}>
               <Form
                 name="contact v1"
                 method="post"
@@ -128,7 +128,7 @@ const contact = () => {
                 </Row>
               </Form>
             </Col>
-            <Col md={4}>Map</Col>
+            <Col md={3}>Map</Col>
           </Row>
         </Container>
       </ContactContainer>
