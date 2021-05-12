@@ -47,7 +47,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-recaptcha`,
+    `react-google-recaptcha-v3`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

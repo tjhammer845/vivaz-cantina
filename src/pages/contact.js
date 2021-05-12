@@ -6,7 +6,6 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
 import styled from "styled-components"
-import ReCAPTCHA from "react-google-recaptcha"
 import { breakpoints } from "../utils/breakpoints"
 
 const contact = () => {
@@ -112,12 +111,9 @@ const contact = () => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg={6} className="mb-3 d-flex justify-content-lg-start">
-                    <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_KEY} />
-                  </Col>
-                  <Col lg={6} className="d-flex justify-content-lg-end">
+                  <Col md={12} className="d-flex justify-content-lg-end">
                     <Button
-                      className="mr-3 d-none d-lg-inline-block"
+                      className="mr-3"
                       type="reset"
                       value="Eraser"
                     >
