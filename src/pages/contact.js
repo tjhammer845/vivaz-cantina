@@ -113,10 +113,7 @@ const contact = () => {
                 </Row>
                 <Row>
                   <Col lg={6} className="mb-3 d-flex justify-content-lg-start">
-                    <ReCAPTCHA
-                      className="w-100"
-                      sitekey={process.env.GATSBY_RECAPTCHA_KEY}
-                    />
+                    <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_KEY} />
                   </Col>
                   <Col lg={6} className="d-flex justify-content-lg-end">
                     <Button
