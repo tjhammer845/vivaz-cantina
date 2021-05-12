@@ -16,7 +16,7 @@ const contact = () => {
         relativePath: { eq: "slides/contact-slides/contact-slide-1.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2.84)
         }
       }
     }

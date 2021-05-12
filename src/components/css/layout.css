@@ -134,8 +134,6 @@ img {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  will-change: unset !important;
-  opacity: 1 !important;
 }
 svg:not(:root) {
   overflow: hidden;

@@ -113,7 +113,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "slides/template-slides/template-slide-1.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2.84)
       }
     }
   }
