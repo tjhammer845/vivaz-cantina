@@ -19,6 +19,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "frontmatter": "^0.0.3",
     "gatsby": "^3.2.1",
+    "gatsby-cli": "^3.5.0",
     "gatsby-image": "^3.2.0",
     "gatsby-image-background-slider": "^0.0.4",
     "gatsby-plugin-gatsby-cloud": "^2.2.0",

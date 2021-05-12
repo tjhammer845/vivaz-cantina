@@ -34,7 +34,7 @@ const NotFoundPage = () => {
             alt="Page not found on Vivaz Cantina"
             aspectRatio={256 / 90}
             placeholder="blurred"
-            loading="eager"
+            loading="lazy"
           />
         </Parallax>
         <Container>

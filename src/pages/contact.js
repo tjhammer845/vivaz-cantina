@@ -33,7 +33,7 @@ const contact = () => {
             alt="About Vivaz Cantina"
             aspectRatio={256 / 90}
             placeholder="blurred"
-            loading="eager"
+            loading="lazy"
           />
         </Parallax>
         <Container>

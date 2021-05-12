@@ -34,7 +34,7 @@ const ThankYou = () => {
             alt="Thank you from Vivaz Cantina"
             aspectRatio={256 / 90}
             placeholder="blurred"
-            loading="eager"
+            loading="lazy"
           />
         </Parallax>
         <Container>
