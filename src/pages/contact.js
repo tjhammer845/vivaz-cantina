@@ -112,21 +112,21 @@ const contact = () => {
                   </Col>
                 </Row>
                 <Row>
-                  <Col lg={6} className="mb-3">
+                  <Col lg={6} className="mb-3 d-flex justify-content-lg-start">
                     <ReCAPTCHA
-                      className="w-100 d-flex justify-content-end"
+                      className="w-100"
                       sitekey={process.env.GATSBY_RECAPTCHA_KEY}
                     />
                   </Col>
-                  <Col lg={6}>
+                  <Col lg={6} className="d-flex justify-content-lg-end">
                     <Button
                       className="mr-3 d-none d-lg-inline-block"
                       type="reset"
                       value="Eraser"
                     >
-                      Clear Form
+                      Clear
                     </Button>
-                    <Button type="submit">Send Message</Button>
+                    <Button type="submit">Send</Button>
                   </Col>
                 </Row>
               </Form>

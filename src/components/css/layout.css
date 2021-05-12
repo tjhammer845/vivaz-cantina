@@ -176,6 +176,7 @@ button {
   font-weight: bold !important;
   padding-top: 0.65rem !important;
   padding-bottom: 0.65rem !important;
+  max-height: 50px;
 }
 button:hover {
   background-color: #ff0000 !important;
