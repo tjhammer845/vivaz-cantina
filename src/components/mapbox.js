@@ -7,8 +7,6 @@ import React, { useRef, useEffect, useState } from "react"
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 
-const MAPBOX_TOKEN = process.env.MAPBOX_ACCESS_TOKEN
-
 const mapContainerStyle = {
   width: "100%",
   height: "450px",
@@ -22,7 +20,7 @@ const Map = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      accessToken: MAPBOX_TOKEN,
+      accessToken: process.env.MAPBOX_ACCESS_TOKEN,
       style: "mapbox://styles/mapbox/streets-v11",
       // Empire State Building [lng, lat]
       center: [41.308189, -72.933937],
