@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Vivaz Cantina | Authentic Mexican in New Haven, CT`,
+    title: `Vivaz Cantina | Gourmet Mexican in New Haven, CT`,
     description: `Mexican food from the heart.`,
     author: `@thecaffeineteam`,
   },
@@ -11,6 +11,15 @@ module.exports = {
     DEV_SSR: false,
   },
   plugins: [
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typography`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `react-google-recaptcha-v3`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -34,54 +43,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-typography`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `react-google-recaptcha-v3`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          // gatsby-remark-relative-images-v2 must
-          // go before gatsby-remark-images
-          {
-            resolve: `gatsby-remark-relative-images-v2`,
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2560,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/vivaz-sun-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -93,12 +54,52 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/vivaz-sun-image.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-instagram-all`,
       options: {
         access_token: process.env.INSTAGRAM_ACCESS_TOKEN,
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images-v2 must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2560,
+            },
+          },
+          {
+            resolve: `gatsby-remark-relative-images-v2`,
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

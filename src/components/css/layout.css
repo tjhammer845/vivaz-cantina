@@ -170,7 +170,7 @@ hr {
   border: none;
   height: 1px;
 }
-button {
+button.btn-primary {
   background-color: #a52800 !important;
   border-color: #a52800 !important;
   font-weight: bold !important;
@@ -178,7 +178,7 @@ button {
   padding-bottom: 0.65rem !important;
   max-height: 50px;
 }
-button:hover {
+button.btn-primary:hover {
   background-color: #ff0000 !important;
   border-color: #a52800 !important;
 }
@@ -314,22 +314,16 @@ h3 {
   line-height: 1.1;
 }
 h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0;
+  padding: 0;
   color: inherit;
   font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.45rem;
-  line-height: 1.1;
+  font-size: 0.83rem;
+  line-height: 3;
 }
 h5 {
   margin-left: 0;

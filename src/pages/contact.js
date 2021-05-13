@@ -1,11 +1,12 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import MapContainer from "../components/google-map"
+import styled from "styled-components"
+import { Container, Button, Col, Form, Row } from "react-bootstrap"
+import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
-import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
 
 const contact = () => {
@@ -42,7 +43,7 @@ const contact = () => {
         </Container>
         <Container>
           <Row>
-            <Col md={9}>
+            <Col xs={12} sm={7} md={8}>
               <Form
                 name="contact v1"
                 method="post"
@@ -112,11 +113,7 @@ const contact = () => {
                 </Row>
                 <Row>
                   <Col md={12} className="d-flex justify-content-lg-end">
-                    <Button
-                      className="mr-3"
-                      type="reset"
-                      value="Eraser"
-                    >
+                    <Button className="mr-3" type="reset" value="Eraser">
                       Clear
                     </Button>
                     <Button type="submit">Send</Button>
@@ -124,7 +121,9 @@ const contact = () => {
                 </Row>
               </Form>
             </Col>
-            <Col md={3}>Map</Col>
+            <Col xs={12} sm={5} md={4}>
+              <MapContainer />
+            </Col>
           </Row>
         </Container>
       </ContactContainer>

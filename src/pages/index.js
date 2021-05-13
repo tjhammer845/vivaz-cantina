@@ -1,15 +1,13 @@
 import * as React from "react"
+import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
+import PopularItems from "../components/popular-items"
 import Slideshow from "../components/home-slideshow"
 import SEO from "../components/seo"
-import InstagramFeed from "../components/instagram-feed"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { Container, Col, Row } from "react-bootstrap"
 import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
 import { variables } from "../utils/variables"
-import PopularItems from "../components/popular-items"
 
 const IndexPage = () => (
   <Layout>
@@ -20,27 +18,28 @@ const IndexPage = () => (
         <Container className="pt-5 pb-4">
           <Row>
             <Col sm={12}>
-              <h2>Welcome to the best Mexican Food in New Haven!</h2>
+              <h2>
+                Proudly serving gourmet Mexican food from the heart in New
+                Haven, CT
+              </h2>
               <p>
-                Turpis nunc eget lorem dolor. <a href="/">Maecenas accumsan</a>{" "}
-                lacus vel facilisis volutpat est velit egestas dui. Sit amet
-                porttitor eget dolor morbi non. Massa sed elementum tempus
-                egestas sed sed. Diam vel quam elementum pulvinar etiam.
-                Pharetra diam sit amet nisl suscipit adipiscing bibendum est.
-                Orci phasellus egestas tellus rutrum tellus pellentesque eu
-                tincidunt tortor. Eget velit aliquet sagittis id.
+                With over 20 years of experience, Chef Bernardino Lanche brings
+                his passion for food, and love of his family and community to
+                each and every dish prepared here at Vivaz Cantina. A favorite
+                among residents in New Haven, Vivaz Cantina is committed to
+                using only the freshest ingredients to deliver the best possible
+                Mexican experience in everything we create and serve!
               </p>
               <p>
-                Nunc pulvinar sapien et ligula ullamcorper malesuada proin.
-                Sollicitudin nibh sit amet commodo nulla facilisi. Aliquam sem
-                fringilla ut morbi tincidunt augue interdum velit. Sapien nec
-                sagittis aliquam malesuada bibendum. Et tortor consequat id
-                porta nibh venenatis cras. Elit sed vulputate mi sit amet. At
-                ultrices mi tempus imperdiet. Dignissim diam quis enim lobortis
-                scelerisque fermentum dui faucibus in. A pellentesque sit amet
-                porttitor eget dolor morbi. Sollicitudin aliquam ultrices
-                sagittis orci a. Eget gravida cum sociis natoque penatibus et
-                magnis dis.
+                Here at Vivaz Cantina we are proud to offer our community a
+                Mexican dining experience like no other. From the moment you
+                walk through the door, you will be welcomed with open arms and
+                we are confident that by the time you leave you will not only
+                have your appetite satisfied beyond measure, but also consider
+                yourself a part of the Vivaz family! Making beautiful memories
+                around our dining tables is what we are all about! We are
+                passioniate about customer service and dedicated to preparing
+                and serving the best Mexican cuisine in the New Haven area.
               </p>
             </Col>
           </Row>

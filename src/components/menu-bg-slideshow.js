@@ -1,35 +1,52 @@
 import React from "react"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import BackgroundSlider from "gatsby-image-background-slider"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Carousel } from "react-bootstrap"
 
 const SlideShow = () => {
-  return (
-    <BackgroundSlider
-      query={useStaticQuery(graphql`
-        query {
-          backgrounds: allFile(
-            filter: { sourceInstanceName: { eq: "backgrounds" } }
-          ) {
-            nodes {
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 4000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+  const data = useStaticQuery(graphql`
+    query {
+      backgrounds: allFile(
+        filter: { sourceInstanceName: { eq: "backgrounds" } }
+      ) {
+        nodes {
+          id
+          relativePath
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
           }
         }
-      `)}
-      style={{
-        position: `fixed`,
-        left: `0`,
-        top: `0`,
-      }}
-      initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
-      transition={4} // transition duration between images
-      duration={6} // how long an image is shown
-    ></BackgroundSlider>
+      }
+    }
+  `)
+  return (
+    <MenuSlideshowContainer>
+      <Carousel fade autoplay={true} controls={false} indicators={false}>
+        {data.backgrounds.nodes.map(image => (
+          <Carousel.Item key={image.id}>
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
+              alt="Menu Background"
+              placeholder="blurred"
+              loading="lazy"
+            />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </MenuSlideshowContainer>
   )
 }
 export default SlideShow
+const MenuSlideshowContainer = styled.div`
+  position: absolute;
+  z-index: -1;
+  .gatsby-image-wrapper {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+`

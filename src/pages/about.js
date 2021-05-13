@@ -1,16 +1,16 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import * as styles from "../components/css/about-css-modules.module.css"
 import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
-import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
-import * as styles from "../components/css/about-css-modules.module.css"
 
 const User = props => (
   <div className={styles.user}>

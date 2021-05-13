@@ -1,10 +1,15 @@
 import * as React from "react"
-import { useEffect, useState } from "react"
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMapPin } from "@fortawesome/free-solid-svg-icons"
+import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { makeStyles } from "@material-ui/core/styles"
+import { useEffect, useState } from "react"
+import { SocialIcon } from "react-social-icons"
+import { breakpoints } from "../utils/breakpoints"
 import { variables } from "../utils/variables"
 
 const useStyles = makeStyles(theme => ({
@@ -18,6 +23,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function TopHeader() {
   const classes = useStyles()
+  const url = typeof window !== "undefined" ? window.location.href : ""
 
   const [navBackground, setNavBackground] = useState("appBarSolid")
   const navRef = React.useRef()
@@ -40,13 +46,26 @@ export default function TopHeader() {
     <StyledTopHeader className={classes[navRef.current]}>
       <Container fluid="lg">
         <Row>
-          <Col xs={9} className="pl-lg-0">
-            <span>1-888-555-4444</span>
-          </Col>
-          <Col xs={3} className="d-flex justify-content-end pr-lg-0">
-            <i>Instagram</i>
-            <i>Facebook</i>
-            <i>Twitter</i>
+          <Col sm={12} className="pl-lg-0 pr-lg-0">
+            <span>
+              <FontAwesomeIcon icon={faPhone} />
+              <small>1-203-444-0664</small>
+            </span>
+            <span className="ml-3 d-none d-sm-inline">
+              <FontAwesomeIcon icon={faMapPin} />
+              <small>161 Park St, New Haven, CT 06511</small>
+            </span>
+            <span className="social-share">
+              <SocialIcon
+                url="https://www.facebook.com/vivaznewhaven/"
+                target="_blank"
+              />
+              <SocialIcon
+                url="https://instagram.com/vivaznewhaven"
+                target="_blank"
+                className="ml-1"
+              />
+            </span>
           </Col>
         </Row>
       </Container>
@@ -61,7 +80,35 @@ const StyledTopHeader = styled.header`
     width: 100%;
     top: 0;
     z-index: 20;
-    padding: 0.5rem;
     transition: background 300ms;
+    span {
+        small {
+            padding-left: 0.5rem;
+            font-size: 75%;
+            font-weight: 600;
+        }
+    }
+    .social-share {
+        position: fixed;
+        top: 0.075rem;
+        right: 0.5rem;
+        float: initial;
+        a {
+            height: 28px!important;
+            width: 28px!important;
+        }
+        @media ${breakpoints.lg} {
+            position: relative;
+            display: flex;
+            align-items: center;
+            float: right;
+            top: initial;
+            right: initial;
+            a {
+                height: 30px!important;
+                width: 30px!important;
+            }
+        }
+    }
 }
 `

@@ -1,14 +1,12 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { Container, Col, Row } from "react-bootstrap"
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
-import styled from "styled-components"
 import { breakpoints } from "../utils/breakpoints"
 
 const ThankYou = () => {
