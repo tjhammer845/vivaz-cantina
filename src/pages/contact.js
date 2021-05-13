@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import MapContainer from "../components/google-map"
+import Map from "../components/mapbox"
 import styled from "styled-components"
 import { Container, Button, Col, Form, Row } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
@@ -122,7 +122,7 @@ const contact = () => {
               </Form>
             </Col>
             <Col xs={12} sm={5} md={4}>
-              <MapContainer />
+              <Map />
             </Col>
           </Row>
         </Container>
