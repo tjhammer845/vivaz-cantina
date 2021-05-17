@@ -1,5 +1,6 @@
 import React from "react"
 // import Recaptcha from "react-google-recaptcha"
+import { Honeypot } from "react-netlify-forms"
 import { Button, Col, Form, Row } from "react-bootstrap"
 
 export default function ContactForm() {
@@ -14,6 +15,9 @@ export default function ContactForm() {
     >
       <Row>
         <Col md={6}>
+          <p hidden>
+            <input name="bot-field" />
+          </p>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
             <Form.Control required size="lg" type="text" name="first-name" />
