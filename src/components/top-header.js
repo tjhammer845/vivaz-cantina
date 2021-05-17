@@ -48,10 +48,15 @@ export default function TopHeader() {
         <Row>
           <Col sm={12} className="pl-lg-0 pr-lg-0">
             <span>
-              <FontAwesomeIcon icon={faPhone} />
-              <small>1-203-444-0664</small>
+              <a
+                href="tel:203-444-0664"
+                className="phone-btn"
+                title="Call Vivaz Cantina"
+              >
+                <FontAwesomeIcon icon={faPhone} />
+              </a>
             </span>
-            <span className="ml-3 d-none d-sm-inline">
+            <span className="ml-3">
               <FontAwesomeIcon icon={faMapPin} />
               <small>161 Park St, New Haven, CT 06511</small>
             </span>
@@ -81,6 +86,27 @@ const StyledTopHeader = styled.header`
     top: 0;
     z-index: 20;
     transition: background 300ms;
+    a.phone-btn {
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        background: ${variables.green};
+        text-align: center;
+        svg {
+            width: .9rem;
+            color: white;
+        }
+        &:hover {
+            background: ${variables.purple};
+        }
+        @media ${breakpoints.lg} {
+            a {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
     span {
         small {
             padding-left: 0.5rem;

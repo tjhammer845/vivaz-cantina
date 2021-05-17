@@ -16,6 +16,6 @@ export const variables = {
   transLightPurple: "rgba(153, 102, 153, 0.8)",
   transOrange: "rgba(255, 0, 0, 0.8)",
   transDarkOrange: "rgba(107, 27, 1, 0.6)",
-  transLightPurple: "rgba(34, 26, 65, .8)",
+  transDarkPurple: "rgba(34, 26, 65, .8)",
   transPurple: "rgba(34, 26, 65, .985)",
 }

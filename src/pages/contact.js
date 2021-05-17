@@ -1,38 +1,20 @@
 import * as React from "react"
+import ContactInfo from "../components/contact-info"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Map from "../components/mapbox"
+import SEO from "../components/seo"
 import styled from "styled-components"
 import { Container, Button, Col, Form, Row } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Parallax } from "react-scroll-parallax"
 import { breakpoints } from "../utils/breakpoints"
 
 const contact = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      item: file(
-        relativePath: { eq: "slides/contact-slides/contact-slide-1.jpg" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 2.84)
-        }
-      }
-    }
-  `)
-  const image = getImage(data.item)
   return (
     <Layout>
       <SEO title="Contact" />
       <ContactContainer>
         <Parallax y={[-50, 50]} tagOuter="figure">
-          <GatsbyImage
-            image={image}
-            alt="About Vivaz Cantina"
-            placeholder="blurred"
-            loading="lazy"
-          />
+          <Map />
         </Parallax>
         <Container>
           <Row>
@@ -45,7 +27,7 @@ const contact = () => {
           <Row>
             <Col xs={12} sm={7} md={8}>
               <Form
-                name="contact v1"
+                name="contact"
                 method="post"
                 data-netlify="true"
                 data-netlify-recaptcha="true"
@@ -53,7 +35,6 @@ const contact = () => {
                 netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
                 <Row>
                   <Col md={6}>
                     <Form.Group>
@@ -122,7 +103,7 @@ const contact = () => {
               </Form>
             </Col>
             <Col xs={12} sm={5} md={4}>
-              <Map />
+              <ContactInfo />
             </Col>
           </Row>
         </Container>
