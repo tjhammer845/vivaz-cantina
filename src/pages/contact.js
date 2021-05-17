@@ -34,9 +34,14 @@ const contact = () => {
                 action="/thank-you"
                 netlify-honeypot="bot-field"
               >
-                <input type="hidden" name="bot-field" />
                 <Row>
                   <Col md={6}>
+                    <Form.Group>
+                      <label>
+                        Don’t fill this out if you&rsquo;re human:{" "}
+                        <input name="bot-field" />
+                      </label>
+                    </Form.Group>
                     <Form.Group>
                       <Form.Label htmlFor="first-name">First Name</Form.Label>
                       <Form.Control
