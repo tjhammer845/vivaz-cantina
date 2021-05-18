@@ -32,3 +32,17 @@ const { fmImagesToRelative } = require("gatsby-remark-relative-images-v2")
 exports.onCreateNode = ({ node }) => {
   fmImagesToRelative(node)
 }
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@mapbox|mapbox-gl/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

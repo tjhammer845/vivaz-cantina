@@ -11,10 +11,18 @@ export default function ContactForm() {
       netlify-honeypot="bot-field"
     >
       <Row>
+        <Col md={12}>
+          <h3>Message Us</h3>
+        </Col>
+      </Row>
+      <Row>
         <Col md={6}>
-          <div hidden>
-            <input name="bot-field" />
-          </div>
+          <Form.Group hidden>
+            <Form.Label htmlFor="bot-field">
+              Bot Field: Humans do not fill out!
+            </Form.Label>
+            <Form.Control name="bot-field" />
+          </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
             <Form.Control required size="lg" type="text" name="first-name" />

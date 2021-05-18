@@ -83,7 +83,10 @@ const MenuLinks = styled.nav`
       margin-right: 31.35%;
     }
     li.contact:hover ~ hr {
-      margin-right: 9.15%;
+      margin-right: 9.45%;
+      @media ${breakpoints.xl} {
+        margin-right: 9.1%;
+      }
     }
   }
 `
