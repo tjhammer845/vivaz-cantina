@@ -19,7 +19,6 @@ module.exports = {
     `gatsby-plugin-typography`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
-    `react-google-recaptcha-v3`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

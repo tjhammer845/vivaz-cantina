@@ -19,17 +19,20 @@ export default function ContactInfo() {
       </p>
       <p className="d-flex">
         <FontAwesomeIcon icon={faHourglassHalf} />
-        <div>
+        <span>
           <strong className="mr-2">Mon-Fri</strong>10:30am - 11:00pm
           <br />
           <strong className="mr-2">Sat/Sun</strong>9:30am - 1:00am
-        </div>
+        </span>
       </p>
     </StyledInfoContainer>
   )
 }
 const StyledInfoContainer = styled.div`
   p {
+    span {
+      display: block;
+    }
     svg {
       color: ${variables.green};
       width: 1.5rem !important;
