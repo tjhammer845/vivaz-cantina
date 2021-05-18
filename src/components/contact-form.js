@@ -7,10 +7,18 @@ export default function ContactForm() {
     <form
       name="simpleContactForm"
       method="POST"
+      action="/thank-you"
       data-netlify="true"
+      data-netlify-honeypot="bot-field"
       id="simple-contact-form"
       class="contact-form"
     >
+      <p class="hidden">
+        <label id="contact-form-bot-label">
+          Don't fill this out if you're human:
+          <input name="bot-field" aria-labelledby="contact-form-bot-label" />
+        </label>
+      </p>
       <p class="form-row">
         <label
           id="contact-form-name-label"
