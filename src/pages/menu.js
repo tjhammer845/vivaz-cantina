@@ -22,7 +22,24 @@ const options = {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      if (
+        node.content.length === 1 &&
+        find(node.content[0].marks, { type: "code" })
+      ) {
+        return (
+          <pre>
+            <code>{node.content[0].value}</code>
+          </pre>
+        )
+      }
+
+      return (
+        <TruncateMarkup lines={2}>
+          <p>{children}</p>
+        </TruncateMarkup>
+      )
+    },
     [BLOCKS.EMBEDDED_ASSET]: node => {
       return (
         <>
