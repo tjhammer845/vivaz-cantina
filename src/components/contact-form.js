@@ -1,5 +1,8 @@
 import React from "react"
+import styled from "styled-components"
+import ReCAPTCHA from "react-google-recaptcha"
 import { Button, Col, Form, Row } from "react-bootstrap"
+import { breakpoints } from "../utils/breakpoints"
 
 export default function ContactForm() {
   return (
@@ -7,6 +10,7 @@ export default function ContactForm() {
       name="contact"
       method="POST"
       netlify
+      netlify-recaptcha
       action="/thank-you"
       netlify-honeypot="bot-field"
     >
@@ -65,13 +69,30 @@ export default function ContactForm() {
         </Col>
       </Row>
       <Row>
-        <Col md={12} className="d-flex justify-content-lg-end">
-          <Button className="mr-3" type="reset" value="Eraser">
-            Clear
-          </Button>
-          <Button type="submit">Send</Button>
+        <Col md={12}>
+          <FormControls>
+            <ReCAPTCHA
+              sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+              className="mb-3"
+            />
+            <div>
+              <Button className="mr-3" type="reset" value="Eraser">
+                Clear
+              </Button>
+              <Button type="submit">Send</Button>
+            </div>
+          </FormControls>
         </Col>
       </Row>
     </Form>
   )
 }
+const FormControls = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media ${breakpoints.sm} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`

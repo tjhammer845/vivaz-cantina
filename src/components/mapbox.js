@@ -4,6 +4,7 @@ import Icon from "../images/vivaz-sun-icon.png"
 import styled from "styled-components"
 import mapboxgl from "!mapbox-gl" // eslint-disable-line import/no-webpack-loader-syntax
 import { breakpoints } from "../utils/breakpoints"
+import { variables } from "../utils/variables"
 
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
@@ -19,6 +20,9 @@ export default function Map() {
     right: 0,
     left: 0,
     bottom: 0,
+    borderBottom: `solid`,
+    borderWidth: `0.5rem`,
+    borderColor: variables.transOrange,
   }
   const vivazLocation = [state.lng, state.lat]
   const mapContainer = useRef("")
@@ -79,7 +83,7 @@ export default function Map() {
   )
 }
 const ReactMapContainer = styled.div`
-  height: 250px;
+  height: 300px;
   @media ${breakpoints.md} {
     height: 350px;
   }
