@@ -15,7 +15,11 @@ export default function ContactForm() {
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
-
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -24,7 +28,7 @@ export default function ContactForm() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({
+      body: encode({
         "form-name": form.getAttribute("name"),
         "g-recaptcha-response": recaptchaValue,
         ...state,
