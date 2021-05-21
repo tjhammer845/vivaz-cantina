@@ -72,6 +72,7 @@ export default function ContactForm() {
         <Col md={12}>
           <FormControls>
             <ReCAPTCHA
+              required
               sitekey={process.env.GATSBY_RECAPTCHA_KEY}
               className="mb-3"
             />
