@@ -1,6 +1,7 @@
 import React, { setState } from "react"
 import styled from "styled-components"
 import Recaptcha from "react-google-recaptcha"
+import { navigate } from "gatsby"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { breakpoints } from "../utils/breakpoints"
 
@@ -128,6 +129,7 @@ export default function ContactForm() {
               sitekey={RECAPTCHA_KEY}
               size="normal"
               id="recaptcha-google"
+              onChange={() => setButtonDisabled(false)} // disable the disabled button!
               className="mb-3"
             />
             <div>
