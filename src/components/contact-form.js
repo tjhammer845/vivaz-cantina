@@ -12,33 +12,37 @@ export default function ContactForm() {
   const recaptchaRef = React.createRef() // new Ref for reCaptcha
   const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
-  function encode(data) {
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+  const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
   }
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    const recaptchaValue = recaptchaRef.current.getValue()
 
-  const handleSubmit = event => {
-    event.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
+        "form-name": "contact",
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
-      .then(() => navigate("/thank-you/"))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
-  }
-  const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value })
   }
   return (
     <Form
       name="contact"
       method="POST"
       netlify
+      action="/thank-you"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       onSubmit={handleSubmit}
@@ -55,7 +59,6 @@ export default function ContactForm() {
               Bot Field: Humans do not fill out!
             </Form.Label>
             <Form.Control name="bot-field" />
-            <Form.Control name="form-name" value="contact" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
