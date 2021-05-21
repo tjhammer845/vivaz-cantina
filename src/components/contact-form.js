@@ -10,7 +10,7 @@ export default function ContactForm() {
       name="contact"
       method="POST"
       netlify
-      netlify-recaptcha
+      data-netlify-recaptcha="true"
       action="/thank-you"
       netlify-honeypot="bot-field"
     >

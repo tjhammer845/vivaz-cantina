@@ -13,7 +13,7 @@ const NotFoundPage = () => {
   const data = useStaticQuery(graphql`
     query {
       item: file(
-        relativePath: { eq: "slides/about-slides/about-slide-1.jpg" }
+        relativePath: { eq: "slides/template-slides/template-slide-1.jpg" }
       ) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
