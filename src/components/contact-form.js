@@ -6,20 +6,17 @@ import { Button, Col, Form, Row } from "react-bootstrap"
 import { breakpoints } from "../utils/breakpoints"
 
 const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef() // new Ref for reCaptcha
   const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
-  const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -29,13 +26,17 @@ export default function ContactForm() {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": form.getAttribute("name"),
+        "form-name": "contact",
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
+    e.preventDefault()
+  }
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
   }
   return (
     <Form
@@ -59,6 +60,7 @@ export default function ContactForm() {
               Bot Field: Humans do not fill out!
             </Form.Label>
             <Form.Control name="bot-field" />
+            <Form.Control name="form-name" value="contact" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
