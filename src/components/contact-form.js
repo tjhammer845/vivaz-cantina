@@ -6,34 +6,31 @@ import { Button, Col, Form, Row } from "react-bootstrap"
 import { breakpoints } from "../utils/breakpoints"
 
 const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef() // new Ref for reCaptcha
   const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
 
+  const handleSubmit = event => {
+    event.preventDefault()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact",
+        "form-name": event.target.getAttribute("name"),
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => navigate("/thank-you/"))
       .catch(error => alert(error))
-    e.preventDefault()
   }
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -41,8 +38,8 @@ export default function ContactForm() {
   return (
     <Form
       name="contact"
+      method="POST"
       netlify
-      action="/thank-you"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       onSubmit={handleSubmit}
@@ -59,7 +56,6 @@ export default function ContactForm() {
               Bot Field: Humans do not fill out!
             </Form.Label>
             <Form.Control name="bot-field" />
-            <Form.Control name="form-name" value="contact" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
