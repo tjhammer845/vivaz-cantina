@@ -24,7 +24,6 @@ export default function ContactForm() {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": event.target.getAttribute("name"),
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
@@ -56,6 +55,7 @@ export default function ContactForm() {
               Bot Field: Humans do not fill out!
             </Form.Label>
             <Form.Control name="bot-field" />
+            <Form.Control name="form-name" value="contact" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
