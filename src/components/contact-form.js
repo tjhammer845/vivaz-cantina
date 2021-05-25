@@ -49,7 +49,7 @@ export default function ContactForm() {
     >
       <Row>
         <Col md={12}>
-          <h3>Send Us A Message</h3>
+          <h3>Message Us</h3>
         </Col>
       </Row>
       <Row>
