@@ -47,7 +47,7 @@ export default function ContactForm() {
       data-netlify-recaptcha="true"
       data-netlify="true"
       ref={domRef}
-      onSubmit={e => this.handleSubmit(e)}
+      onSubmit={e => handleSubmit(e)}
     >
       <Row>
         <Col md={12}>
