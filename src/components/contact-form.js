@@ -10,7 +10,6 @@ const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
 export default function ContactForm() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef() // new Ref for reCaptcha
-  const domRef = React.createRef()
   const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
   const handleChange = e => {
@@ -46,8 +45,7 @@ export default function ContactForm() {
       data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       data-netlify="true"
-      ref={domRef}
-      onSubmit={e => handleSubmit(e)}
+      onSubmit={handleSubmit}
     >
       <Row>
         <Col md={12}>
