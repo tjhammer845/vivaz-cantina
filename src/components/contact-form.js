@@ -29,7 +29,7 @@ export default function ContactForm() {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": form.getAttribute("name"),
+        "form-name": "contactVivaz",
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
@@ -39,12 +39,12 @@ export default function ContactForm() {
   }
   return (
     <Form
+      data-netlify="true"
       name="contactVivaz"
       method="POST"
-      action="/thank-you"
       data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
-      data-netlify="true"
+      action="/thank-you"
       onSubmit={handleSubmit}
     >
       <Row>
@@ -55,14 +55,8 @@ export default function ContactForm() {
       <Row>
         <Col md={6}>
           <Form.Group hidden>
-            <Form.Label htmlFor="bot-field">
-              Netlify Hidden Input: Humans do not fill out!
-            </Form.Label>
-            <Form.Control name="form-name" value="contactVivaz" />
-            <Form.Label htmlFor="bot-field">
-              Bot Field: Humans do not fill out!
-            </Form.Label>
-            <Form.Control name="bot-field" />
+            <input name="form-name" value="contactVivaz" />
+            <input name="bot-field" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
