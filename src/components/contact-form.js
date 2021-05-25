@@ -56,10 +56,13 @@ export default function ContactForm() {
         <Col md={6}>
           <Form.Group hidden>
             <Form.Label htmlFor="bot-field">
+              Netlify Hidden Input: Humans do not fill out!
+            </Form.Label>
+            <Form.Control name="form-name" value="contactVivaz" />
+            <Form.Label htmlFor="bot-field">
               Bot Field: Humans do not fill out!
             </Form.Label>
             <Form.Control name="bot-field" />
-            <Form.Control name="form-name" value="contactVivaz" />
           </Form.Group>
           <Form.Group>
             <Form.Label htmlFor="first-name">First Name</Form.Label>
