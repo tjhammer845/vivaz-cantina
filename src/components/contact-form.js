@@ -4,11 +4,13 @@ import Recaptcha from "react-google-recaptcha"
 import { navigate } from "gatsby"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { breakpoints } from "../utils/breakpoints"
+
 const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef() // new Ref for reCaptcha
+  const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -35,8 +37,6 @@ export default function ContactForm() {
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
-  const [buttonDisabled, setButtonDisabled] = React.useState(true)
-
   return (
     <Form
       data-netlify="true"
@@ -130,14 +130,16 @@ export default function ContactForm() {
               sitekey={RECAPTCHA_KEY}
               size="normal"
               id="recaptcha-google"
+              onChange={() => setButtonDisabled(false)} // disable the disabled button!
+              className="mb-3"
             />
             <div>
               <Button className="mr-3" type="reset" value="Eraser">
                 Clear
               </Button>
-              <button type="submit" disabled={buttonDisabled}>
+              <Button type="submit" disabled={buttonDisabled}>
                 Send
-              </button>
+              </Button>
             </div>
           </FormControls>
         </Col>
