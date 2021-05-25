@@ -1,14 +1,11 @@
 import React, { setState } from "react"
 import styled from "styled-components"
-import Recaptcha from "react-google-recaptcha"
 import { navigate } from "gatsby"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import { breakpoints } from "../utils/breakpoints"
-const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
-  const recaptchaRef = React.createRef() // new Ref for reCaptcha
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -21,29 +18,24 @@ export default function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contactVivaz",
-        "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
-  const [buttonDisabled, setButtonDisabled] = React.useState(true)
-
   return (
     <Form
       data-netlify="true"
       name="contactVivaz"
       method="POST"
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
       action="/thank-you"
       onSubmit={handleSubmit}
     >
@@ -125,19 +117,11 @@ export default function ContactForm() {
       <Row>
         <Col md={12}>
           <FormControls>
-            <Recaptcha
-              ref={recaptchaRef}
-              sitekey={RECAPTCHA_KEY}
-              size="normal"
-              id="recaptcha-google"
-            />
             <div>
               <Button className="mr-3" type="reset" value="Eraser">
                 Clear
               </Button>
-              <button type="submit" disabled={buttonDisabled}>
-                Send
-              </button>
+              <Button type="submit">Send</Button>
             </div>
           </FormControls>
         </Col>
