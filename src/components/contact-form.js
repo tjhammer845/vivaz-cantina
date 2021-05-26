@@ -30,6 +30,7 @@ export default function ContactForm() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contactVivaz",
+        "g-recaptcha": RECAPTCHA_KEY,
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
@@ -126,6 +127,7 @@ export default function ContactForm() {
         <Col md={12}>
           <FormControls>
             <Recaptcha
+              name="g-recaptcha-response"
               ref={recaptchaRef}
               sitekey={RECAPTCHA_KEY}
               size="normal"
