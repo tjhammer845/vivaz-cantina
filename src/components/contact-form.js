@@ -1,175 +1,156 @@
 import React, { setState } from "react"
 import styled from "styled-components"
-import Recaptcha from "react-google-recaptcha"
 import { navigate } from "gatsby"
 import { Button, Col, Form, Row } from "react-bootstrap"
-import { breakpoints } from "../utils/breakpoints"
-
-const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
-  const recaptchaRef = React.createRef() // new Ref for reCaptcha
-  const [buttonDisabled, setButtonDisabled] = React.useState(true)
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
-  }
-  const handleRecaptcha = value => {
-    setState({ "g-recaptcha-response": value })
-    setButtonDisabled(false)
   }
   const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
   }
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = await recaptchaRef.current.getValue()
-    if (recaptchaValue === null || recaptchaValue === "") console.log("no val")
 
-    console.log("RECAP VALUE")
-    console.log(recaptchaValue)
-    await fetch("/?no-cache=1", {
+    fetch("/", {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": form.getAttribute("name"),
-        "g-recaptcha": RECAPTCHA_KEY,
-        "g-recaptcha-response": recaptchaValue,
+        "form-name": "contactVivaz",
         ...state,
       }),
     })
-      .then(val => console.log(val))
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
   return (
-    <Form
-      data-netlify="true"
-      name="contactVivaz"
-      method="POST"
-      data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
-      action="/thank-you"
-      onSubmit={handleSubmit}
-    >
-      <Row>
-        <Col md={12}>
-          <h3>Send Us A Message</h3>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <Form.Group hidden>
-            <input name="form-name" value="contactVivaz" />
-            <input name="bot-field" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="first-name">First Name</Form.Label>
-            <Form.Control
-              required
-              size="lg"
-              type="text"
-              name="first-name"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Col>
-        <Col md={6}>
-          <Form.Group>
-            <Form.Label htmlFor="last-name">Last Name</Form.Label>
-            <Form.Control
-              required
-              size="lg"
-              type="text"
-              name="last-name"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6}>
-          <Form.Group>
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <Form.Control
-              required
-              size="lg"
-              type="email"
-              name="email"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Col>
-        <Col md={6}>
-          <Form.Group>
-            <Form.Label htmlFor="phone">Phone (Optional)</Form.Label>
-            <Form.Control
-              size="lg"
-              type="tel"
-              name="phone"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={12}>
-          <Form.Group>
-            <Form.Label htmlFor="message">Message</Form.Label>
-            <Form.Control
-              required
-              as="textarea"
-              rows="3"
-              placeholder="Enter your message here."
-              name="message"
-              onChange={handleChange}
-            />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={12}>
-          <FormControls>
-            <Recaptcha
-              name="g-recaptcha-response"
-              ref={recaptchaRef}
-              sitekey={RECAPTCHA_KEY}
-              size="normal"
-              id="recaptcha-google"
-              onChange={() => setButtonDisabled(false)} // disable the disabled button!
-              onChange={handleRecaptcha}
-              className="mb-3"
-            />
-            <div>
+    <FormContainer>
+      <Form
+        data-netlify="true"
+        name="contactVivaz"
+        method="POST"
+        data-netlify-honeypot="bot-field"
+        action="/thank-you"
+        onSubmit={handleSubmit}
+      >
+        <Row>
+          <Col md={12}>
+            <h3>Message Us</h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6}>
+            <Form.Group hidden>
+              <input name="form-name" value="contactVivaz" />
+              <input name="bot-field" />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="first-name">First Name</Form.Label>
+              <Form.Control
+                required
+                size="lg"
+                type="text"
+                name="first-name"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group>
+              <Form.Label htmlFor="last-name">Last Name</Form.Label>
+              <Form.Control
+                required
+                size="lg"
+                type="text"
+                name="last-name"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6}>
+            <Form.Group>
+              <Form.Label htmlFor="email">Email</Form.Label>
+              <Form.Control
+                required
+                size="lg"
+                type="email"
+                name="email"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group>
+              <Form.Label htmlFor="phone">Phone (Optional)</Form.Label>
+              <Form.Control
+                size="lg"
+                type="tel"
+                name="phone"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <Form.Group>
+              <Form.Label htmlFor="subject">Subject</Form.Label>
+              <Form.Control
+                size="lg"
+                type="text"
+                name="subject"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <Form.Group>
+              <Form.Label htmlFor="message">Message</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
+                rows="3"
+                placeholder="Enter your message here."
+                name="message"
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12}>
+            <div className="form-controls">
               <Button className="mr-3" type="reset" value="Eraser">
                 Clear
               </Button>
-              <Button type="submit" disabled={buttonDisabled}>
-                Send
-              </Button>
+              <Button type="submit">Send</Button>
             </div>
-          </FormControls>
-        </Col>
-      </Row>
-    </Form>
+          </Col>
+        </Row>
+      </Form>
+    </FormContainer>
   )
 }
-const FormControls = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  @media ${breakpoints.sm} {
-    flex-direction: row;
-    justify-content: space-between;
+const FormContainer = styled.div`
+  label {
+    font-size: 0.75rem;
   }
-  button[disabled] {
-    cursor: not-allowed;
+  .form-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    button[disabled] {
+      cursor: not-allowed;
+    }
   }
 `
