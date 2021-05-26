@@ -15,26 +15,37 @@ export default function ContactForm() {
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
+  const handleRecaptcha = value => {
+    setState({ "g-recaptcha-response": value })
+    setButtonDisabled(false)
+  }
   const encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
   }
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
+    const recaptchaValue = await recaptchaRef.current.getValue()
+    if (recaptchaValue === null || recaptchaValue === "") console.log("no val")
 
-    fetch("/", {
+    console.log("RECAP VALUE")
+    console.log(recaptchaValue)
+    await fetch("/?no-cache=1", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
       body: encode({
-        "form-name": "contactVivaz",
+        "form-name": form.getAttribute("name"),
         "g-recaptcha": RECAPTCHA_KEY,
         "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
+      .then(val => console.log(val))
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
@@ -133,6 +144,7 @@ export default function ContactForm() {
               size="normal"
               id="recaptcha-google"
               onChange={() => setButtonDisabled(false)} // disable the disabled button!
+              onChange={handleRecaptcha}
               className="mb-3"
             />
             <div>
