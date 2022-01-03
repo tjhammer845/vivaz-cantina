@@ -49,20 +49,20 @@ const ItemTemplate = ({ data }) => {
         <Container>
           <Row>
             <Col sm={12} className="mb-5">
-              <GatsbyImage
+              {/* <GatsbyImage
                 image={data.contentfulMenu.featuredImage.gatsbyImageData}
                 alt={data.contentfulMenu.title}
                 style={{ maxWidth: `250px` }}
-              />
+              /> */}
 
               <h3 className="mt-4 mb-2">
                 {data.contentfulMenu.title}{" "}
                 <span className="p-2 font-weight-bold">
                   {data.contentfulMenu.currency}
-                  {data.contentfulMenu.price}
+                  {data.contentfulMenu.cost}
                 </span>
               </h3>
-              {data.contentfulMenu.fullDescription !== null ? (
+              {/* {data.contentfulMenu.fullDescription !== null ? (
                 <div>
                   {renderRichText(data.contentfulMenu.fullDescription, options)}
                 </div>
@@ -70,7 +70,9 @@ const ItemTemplate = ({ data }) => {
                 <div>
                   {renderRichText(data.contentfulMenu.description, options)}
                 </div>
-              )}
+              )} */}
+              {renderRichText(data.contentfulMenu.description, options)}
+
               <Button
                 className="button mt-5"
                 onClick={() => {
@@ -92,21 +94,23 @@ const ItemTemplate = ({ data }) => {
 export default ItemTemplate
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulMenu(slug: { eq: $slug }) {
+  # query($slug: String!) {
+    # contentfulMenu(slug: { eq: $slug }) {
+  query {
+    contentfulMenu {
       title
       currency
-      price
+      cost
       slug
-      featuredImage {
-        gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
-      }
+      # featuredImage {
+      #   gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
+      # }
       description {
         raw
       }
-      fullDescription {
-        raw
-      }
+      # fullDescription {
+      #   raw
+      # }
     }
     file(relativePath: { eq: "slides/template-slides/template-slide-1.jpg" }) {
       childImageSharp {

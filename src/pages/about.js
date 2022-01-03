@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as styles from "../components/css/about-css-modules.module.css"
-import InstagramFeed from "../components/instagram-feed"
+// import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "react-bootstrap/Container"
@@ -96,7 +96,7 @@ const about = () => {
           </Row>
         </Container>
       </AboutContainer>
-      <InstagramFeed />
+      {/* <InstagramFeed /> */}
     </Layout>
   )
 }

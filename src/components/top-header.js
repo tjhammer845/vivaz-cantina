@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMapPin } from "@fortawesome/free-solid-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
+import { faClock } from "@fortawesome/free-solid-svg-icons"
 import { makeStyles } from "@material-ui/core/styles"
 import { useEffect, useState } from "react"
 import { SocialIcon } from "react-social-icons"
@@ -47,7 +48,6 @@ export default function TopHeader() {
       <Container fluid="lg">
         <Row>
           <Col sm={12} className="pl-lg-0 pr-lg-0">
-            <span>
               <a
                 href="tel:203-444-0664"
                 className="phone-btn"
@@ -55,10 +55,11 @@ export default function TopHeader() {
               >
                 <FontAwesomeIcon icon={faPhone} />
               </a>
+            <span className="address ml-3">
+              <FontAwesomeIcon icon={faMapPin} /> 161 Park St, New Haven, CT 06511
             </span>
-            <span className="ml-3">
-              <FontAwesomeIcon icon={faMapPin} />
-              <small>161 Park St, New Haven, CT 06511</small>
+            <span className="hours ml-3">
+              <FontAwesomeIcon icon={faClock} /> Hours: 4pm-1am
             </span>
             <span className="social-share">
               <SocialIcon
@@ -69,8 +70,8 @@ export default function TopHeader() {
                 url="https://instagram.com/vivaznewhaven"
                 target="_blank"
                 className="ml-1"
-              />
-            </span>
+              /> 
+              </span>
           </Col>
         </Row>
       </Container>
@@ -108,11 +109,11 @@ const StyledTopHeader = styled.header`
         }
     }
     span {
-        small {
-            padding-left: 0.5rem;
-            font-size: 75%;
-            font-weight: 600;
-        }
+      font-size: 0.65rem;
+      font-weight: 600;
+      @media ${breakpoints.sm} {
+        font-size: 0.85rem;
+      }
     }
     .social-share {
         position: fixed;

@@ -41,19 +41,20 @@ const options = {
 const PopularItems = () => {
   const data = useStaticQuery(graphql`
     query {
-      item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
+      # item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
+      item: allContentfulMenu(sort: { fields: title }) {
         nodes {
           title
           currency
-          price
+          cost
           slug
           popular
           description {
             raw
           }
-          featuredImage {
-            gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
-          }
+          # featuredImage {
+          #   gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
+          # }
         }
       }
     }
@@ -71,24 +72,28 @@ const PopularItems = () => {
             return (
               item.popular === true && (
                 <Col
-                  md={3}
-                  sm={4}
-                  xs={6}
-                  className="pb-4"
-                  key={`popular-item-${item.slug}`}
+                  md={4}
+                  sm={6}
+                  xs={12}
+                  className="menu-item"
+                  key={`${item.slug}`}
                 >
-                  <Link to={`/${item.slug}`} title={item.title}>
-                    <GatsbyImage
+                  <div>
+                    {/* <GatsbyImage
                       image={item.featuredImage.gatsbyImageData}
                       alt={item.title}
-                    />
-                    <span className="p-2 font-weight-bold">
-                      {item.currency}
-                      {item.price}
-                    </span>
+                    /> */}
+                    {item.cost !== null ? (
+                      <span className="p-2 font-weight-bold">
+                        {item.currency}
+                        {item.cost}
+                      </span>
+                    ) : (<span></span>)}
                     <h3>{item.title}</h3>
-                    <div>{renderRichText(item.description, options)}</div>
-                  </Link>
+                    {item.description !== null ? (
+                      <div className="menu-description">{renderRichText(item.description, options)}</div>
+                    ) : (<span></span>)}
+                  </div>
                 </Col>
               )
             )
@@ -116,35 +121,55 @@ const PopularContainer = styled.div`
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
-  a {
-    h3,
-    p {
-      color: white;
-      transition: all 1s ease;
-    }
-    picture {
-      img {
-        transition: all 0.7s ease !important;
+  .menu-item {
+    min-height: 8rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${variables.transWhiteFull};
+    margin-bottom: 2rem;
+    div {
+      width: 100%;
+      h3 {
+        width: calc(100% - 3.5rem);
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
       }
-    }
-    span {
-      position: absolute;
-      top: 0px;
-      right: 0.8rem;
-      font-size: 0.85rem;
-      color: white;
-      background: ${variables.transLightPurple};
-    }
-    &:hover {
-      picture {
-        img {
-          filter: blur(3px) saturate(200%);
-        }
+      .menu-description {
+        font-size: 0.75rem;
       }
       h3,
-      p,
+      p {
+        color: white;
+        transition: all 1s ease;
+      }
+      picture {
+        img {
+          transition: all 0.7s ease !important;
+        }
+      }
       span {
-        color: ${variables.yellow};
+        position: absolute;
+        top: 0px;
+        right: 0;
+        font-size: 0.85rem;
+        color: white;
+        background: ${variables.transLightPurple};
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      }
+      &:hover {
+        picture {
+          img {
+            filter: blur(3px) saturate(200%);
+          }
+        }
+        h3,
+        p,
+        span {
+          color: ${variables.yellow};
+        }
       }
     }
   }

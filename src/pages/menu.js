@@ -44,7 +44,7 @@ const Menu = ({ data: { item } }) => (
     <SEO title="Menu" />
     <Slideshow />
     <MenuContainer>
-      <TitleSection>
+      <IntroSection>
         <Container>
           <Row>
             <Col sm={12}>
@@ -58,40 +58,43 @@ const Menu = ({ data: { item } }) => (
             </Col>
           </Row>
         </Container>
-      </TitleSection>
-      <AppetizersSection>
+      </IntroSection>
+      <CocktailsSection>
         <Container>
           <Row>
             <Col sm={12}>
-              <h2 className="mt-5 mb-2">Appetizers</h2>
-              <p>Appetizers Description</p>
+              <h2 className="mt-5 mb-4">Cocktails</h2>
             </Col>
           </Row>
-          <Row className="justify-content-md-between pb-5">
+          <Row className="justify-content-md-start pb-5">
             {item.nodes.map(item => {
               return (
-                item.menuSection === "Appetizers" && (
+                item.menuSection === "Cocktails" && (
                   <Col
                     md={4}
                     sm={6}
                     xs={12}
-                    key={`appetizer-item-${item.slug}`}
+                    key={`${item.slug}`}
                   >
-                    <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
-                      <Link to={`/${item.slug}`} title={item.title}>
-                        <GatsbyImage
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
-                        />
-                        <span className="p-2 font-weight-bold">
-                          {item.currency}
-                          {item.price}
-                        </span>
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
                         <TruncateMarkup lines={1}>
-                          <h3>{item.title}</h3>
+                          <h3 className="mt-3">{item.title}</h3>
                         </TruncateMarkup>
-                        <div>{renderRichText(item.description, options)}</div>
-                      </Link>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
                     </div>
                   </Col>
                 )
@@ -99,40 +102,43 @@ const Menu = ({ data: { item } }) => (
             })}
           </Row>
         </Container>
-      </AppetizersSection>
-      <MainCoursesSection>
+      </CocktailsSection>
+      <BeerSection>
         <Container>
           <Row>
             <Col sm={12}>
-              <h2 className="mt-5 mb-2">Main Courses</h2>
-              <p>Main Courses Description</p>
+              <h2 className="mt-5 mb-4">Beer</h2>
             </Col>
           </Row>
-          <Row className="justify-content-md-between pb-5">
+          <Row className="justify-content-md-start pb-5">
             {item.nodes.map(item => {
               return (
-                item.menuSection === "Main Courses" && (
+                item.menuSection === "Beer" && (
                   <Col
                     md={4}
                     sm={6}
                     xs={12}
-                    key={`main-courses-item-${item.slug}`}
+                    key={`${item.slug}`}
                   >
-                    <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
-                      <Link to={`/${item.slug}`} title={item.title}>
-                        <GatsbyImage
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
-                        />
-                        <span className="p-2 font-weight-bold">
-                          {item.currency}
-                          {item.price}
-                        </span>
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
                         <TruncateMarkup lines={1}>
-                          <h3>{item.title}</h3>
+                          <h3 className="mt-3">{item.title}</h3>
                         </TruncateMarkup>
-                        <div>{renderRichText(item.description, options)}</div>
-                      </Link>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
                     </div>
                   </Col>
                 )
@@ -140,112 +146,43 @@ const Menu = ({ data: { item } }) => (
             })}
           </Row>
         </Container>
-      </MainCoursesSection>
-      <DessertsSection>
+      </BeerSection>
+      <WineSection>
         <Container>
           <Row>
             <Col sm={12}>
-              <h2 className="mt-5 mb-2">Desserts</h2>
-              <p>Desserts Description</p>
+              <h2 className="mt-5 mb-4">Wine</h2>
             </Col>
           </Row>
-          <Row className="justify-content-md-between pb-5">
+          <Row className="justify-content-md-start pb-5">
             {item.nodes.map(item => {
               return (
-                item.menuSection === "Desserts" && (
-                  <Col md={4} sm={6} xs={12} key={`desserts-item-${item.slug}`}>
-                    <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
-                      <Link to={`/${item.slug}`} title={item.title}>
-                        <GatsbyImage
-                          image={item.featuredImage.gatsbyImageData}
-                          alt={item.title}
-                        />
-                        <span className="p-2 font-weight-bold">
-                          {item.currency}
-                          {item.price}
-                        </span>
-                        <TruncateMarkup lines={1}>
-                          <h3>{item.title}</h3>
-                        </TruncateMarkup>
-                        <div>{renderRichText(item.description, options)}</div>
-                      </Link>
-                    </div>
-                  </Col>
-                )
-              )
-            })}
-          </Row>
-        </Container>
-      </DessertsSection>
-      <DrinksSection>
-        <Container>
-          <Row>
-            <Col sm={12}>
-              <h2 className="mt-5 mb-2">Drinks</h2>
-              <p>Drinks Description</p>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-between pb-5">
-            {item.nodes.map(item => {
-              return (
-                item.menuSection === "Drinks" && (
-                  <Col md={4} sm={6} xs={12} key={`drinks-item-${item.slug}`}>
-                    <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
-                      <Link to={`/${item.slug}`} title={item.title}>
-                        <GatsbyImage
-                          image={item.featuredImage.gatsbyImageData}
-                          alt={item.title}
-                        />
-                        <span className="p-2 font-weight-bold">
-                          {item.currency}
-                          {item.price}
-                        </span>
-                        <TruncateMarkup lines={1}>
-                          <h3>{item.title}</h3>
-                        </TruncateMarkup>
-                        <div>{renderRichText(item.description, options)}</div>
-                      </Link>
-                    </div>
-                  </Col>
-                )
-              )
-            })}
-          </Row>
-        </Container>
-      </DrinksSection>
-      <WineBeerSection>
-        <Container>
-          <Row>
-            <Col sm={12}>
-              <h2 className="mt-5 mb-2">Wine and Beer</h2>
-              <p>Wine and Beer Description</p>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-between pb-5">
-            {item.nodes.map(item => {
-              return (
-                item.menuSection === "Wine and Beer" && (
+                item.menuSection === "Wine" && (
                   <Col
                     md={4}
                     sm={6}
                     xs={12}
-                    key={`wine-and-beer-item-${item.slug}`}
+                    key={`${item.slug}`}
                   >
-                    <div className="bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
-                      <Link to={`/${item.slug}`} title={item.title}>
-                        <GatsbyImage
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
-                        />
-                        <span className="p-2 font-weight-bold">
-                          {item.currency}
-                          {item.price}
-                        </span>
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
                         <TruncateMarkup lines={1}>
-                          <h3>{item.title}</h3>
+                          <h3 className="mt-3">{item.title}</h3>
                         </TruncateMarkup>
-                        <div>{renderRichText(item.description, options)}</div>
-                      </Link>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
                     </div>
                   </Col>
                 )
@@ -253,7 +190,183 @@ const Menu = ({ data: { item } }) => (
             })}
           </Row>
         </Container>
-      </WineBeerSection>
+      </WineSection>
+      <AperitivosSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Aperitivos</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Aperitivos" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </AperitivosSection>
+      <TacosSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Tacos</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Tacos" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </TacosSection>
+      <PlatosSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Platos</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Platos" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </PlatosSection>
+      <PostreSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Postre</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Postre" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </PostreSection>
       <EndSection className="shadow">
         <Container>
           <Row>
@@ -277,66 +390,79 @@ const Menu = ({ data: { item } }) => (
 export default Menu
 export const query = graphql`
   {
-    item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
+    # item: allContentfulMenu(sort: { fields: featuredImage___updatedAt }) {
+    item: allContentfulMenu(sort: { fields: title }) {
       nodes {
         menuSection
         title
         currency
-        price
+        cost
         slug
         description {
           raw
         }
-        featuredImage {
-          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
-        }
+        # featuredImage {
+        #   gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
+        # }
       }
     }
   }
 `
 const MenuContainer = styled.div`
-  h3 {
+  h2 {
     color: black;
-    font-size: 1.25rem;
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 2rem;
   }
-  a {
-    h3 {
-      transition: all 1s ease;
-    }
-    picture {
-      img {
-        transition: all 0.7s ease !important;
+  .menu-item {
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      width: 100%;
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        transition: all 1s ease;
       }
-    }
-    span {
-      position: absolute;
-      top: 1.05rem;
-      right: 1.9rem;
-      font-size: 0.85rem;
-      color: white;
-      background: ${variables.transLightPurple};
-    }
-    &:hover {
       picture {
         img {
-          filter: blur(3px) saturate(200%);
+          transition: all 0.7s ease !important;
         }
       }
-      h3 {
-        color: ${variables.bloodOrange};
-      }
       span {
-        color: ${variables.yellow};
+        position: absolute;
+        top: 0.05rem;
+        right: 0.85rem;
+        border-radius: 0 0.25rem 0 0;
+        font-size: 0.85rem;
+        color: white;
+        background: ${variables.transLightPurple};
+        box-shadow: inset 1px 0 0 0 rgba(0, 0, 0, 0.2);
       }
-      p {
-        color: #000;
+      .menu-description {
+        font-size: 0.75rem;
+      }
+      &:hover {
+        picture {
+          img {
+            filter: blur(3px) saturate(200%);
+          }
+        }
+        h3 {
+          color: ${variables.bloodOrange};
+        }
+        span {
+          color: ${variables.yellow};
+        }
+        p {
+          color: #000;
+        }
       }
     }
   }
 `
-const TitleSection = styled.div`
+const IntroSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
@@ -344,46 +470,60 @@ const TitleSection = styled.div`
   padding: 18rem 0 3rem;
 }
 `
-const AppetizersSection = styled.div`
+const CocktailsSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transYellow};
 }
 `
-const MainCoursesSection = styled.div`
+const BeerSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transGreen};
 }
 `
-const DessertsSection = styled.div`
+const WineSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transOrange};
 }
 `
-const DrinksSection = styled.div`
+const AperitivosSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transBlue};
 }
 `
-const WineBeerSection = styled.div`
+const TacosSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transLightPurple};
 }
 `
-const EndSection = styled.div`
+const PlatosSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transWhite};
+}
+`
+const PostreSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transYellow};
+}
+`
+const EndSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transGreen};
   padding: 3rem 0 5rem;
 }
 `

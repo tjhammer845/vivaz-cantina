@@ -88,6 +88,7 @@ const StyledHeader = styled.header`
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.7);
     svg {
         height: fit-content;
+        max-height: 8rem;
         padding: .75rem 0;
         transition: all 1s ease;
      }

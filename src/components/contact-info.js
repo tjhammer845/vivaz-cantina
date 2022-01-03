@@ -21,9 +21,7 @@ export default function ContactInfo() {
       <p className="d-flex mb-0">
         <FontAwesomeIcon icon={faHourglassHalf} />
         <span>
-          <strong className="mr-2">Mon-Fri</strong>10:30am - 11:00pm
-          <br />
-          <strong className="mr-2">Sat/Sun</strong>9:30am - 1:00am
+          <strong className="mr-2">Everyday</strong>4pm - 1am
         </span>
       </p>
     </StyledInfoContainer>
@@ -36,14 +34,15 @@ const StyledInfoContainer = styled.div`
   margin-bottom: 3rem;
   min-width: 100%;
   p {
+    font-size: 0.85rem;
     span {
       display: block;
     }
     svg {
       color: ${variables.green};
-      width: 1.5rem !important;
-      height: 1.5rem !important;
-      margin-right: 1rem;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      margin-right: 0.5rem;
     }
   }
   @media ${breakpoints.lg} {

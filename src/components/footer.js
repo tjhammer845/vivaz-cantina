@@ -48,11 +48,7 @@ const Footer = () => (
           className="d-flex justify-content-center justify-content-md-end"
         >
           <StyledP className="m-0">
-            &copy; {new Date().getFullYear()} Vivaz Cantina. Built by
-            {` `}
-            <a className="text-white" href="https://tom.thecaffeineteam.com">
-              The Caffeine Team.
-            </a>
+            &copy; {new Date().getFullYear()} Vivaz Cantina.
           </StyledP>
         </Col>
       </Row>

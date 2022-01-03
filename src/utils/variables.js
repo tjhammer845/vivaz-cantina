@@ -10,6 +10,7 @@ export const variables = {
 
   // Transparant Colors
   transWhite: "rgba(255, 255, 255, 0.8)",
+  transWhiteFull: "rgba(255, 255, 255, 0.1)",
   transYellow: "rgba(255, 255, 0, 0.8)",
   transGreen: "rgba(51, 153, 102, 0.8)",
   transBlue: "rgba(0, 153, 153, 0.8)",
