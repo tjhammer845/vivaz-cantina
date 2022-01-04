@@ -6,6 +6,7 @@ module.exports = {
     title: `Vivaz Cantina | Gourmet Mexican in New Haven, CT`,
     description: `Mexican food from the heart.`,
     author: `@thecaffeineteam`,
+    siteUrl: `https://www.vivaznewhaven.com`,
   },
   flags: {
     DEV_SSR: false,
@@ -19,6 +20,7 @@ module.exports = {
     `gatsby-plugin-typography`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
