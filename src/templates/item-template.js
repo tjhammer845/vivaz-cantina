@@ -57,22 +57,20 @@ const ItemTemplate = ({ data }) => {
 
               <h3 className="mt-4 mb-2">
                 {data.contentfulMenu.title}{" "}
-                <span className="p-2 font-weight-bold">
-                  {data.contentfulMenu.currency}
-                  {data.contentfulMenu.cost}
-                </span>
+                {data.contentfulMenu.cost !== null ? (
+                      <span className="p-2 font-weight-bold">
+                        {data.contentfulMenu.currency}
+                        {data.contentfulMenu.cost}
+                      </span>
+                    ) : (<span></span>)}
               </h3>
-              {/* {data.contentfulMenu.fullDescription !== null ? (
-                <div>
-                  {renderRichText(data.contentfulMenu.fullDescription, options)}
-                </div>
-              ) : (
+              { data.contentfulMenu.description !== null ? (
                 <div>
                   {renderRichText(data.contentfulMenu.description, options)}
                 </div>
-              )} */}
-              {renderRichText(data.contentfulMenu.description, options)}
-
+              ) : (
+                <span></span>
+              )}
               <Button
                 className="button mt-5"
                 onClick={() => {
