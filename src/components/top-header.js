@@ -115,8 +115,8 @@ const StyledTopHeader = styled.header`
         font-size: 0.7rem;
       }
     }
-    span:first-child {
-      display: none
+    .address {
+      display: none;
       @media ${breakpoints.sm} {
         display: inline;
       }
