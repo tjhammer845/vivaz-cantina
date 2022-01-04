@@ -92,8 +92,6 @@ const ItemTemplate = ({ data }) => {
 export default ItemTemplate
 
 export const query = graphql`
-  # query($slug: String!) {
-    # contentfulMenu(slug: { eq: $slug }) {
   query {
     contentfulMenu {
       title
@@ -106,9 +104,6 @@ export const query = graphql`
       description {
         raw
       }
-      # fullDescription {
-      #   raw
-      # }
     }
     file(relativePath: { eq: "slides/template-slides/template-slide-1.jpg" }) {
       childImageSharp {
