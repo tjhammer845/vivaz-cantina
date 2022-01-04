@@ -279,6 +279,50 @@ const Menu = ({ data: { item } }) => (
           </Row>
         </Container>
       </TacosSection>
+      <MeatlessSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Meatless</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Meatless" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </MeatlessSection>
       <PlatosSection>
         <Container>
           <Row>
@@ -323,6 +367,138 @@ const Menu = ({ data: { item } }) => (
           </Row>
         </Container>
       </PlatosSection>
+      <SaladSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Salad</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Salad" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </SaladSection>
+       <SoupSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Soup</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Soup" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </SoupSection>
+      <AlAmericanoSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Al Americano</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Al Americano" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </AlAmericanoSection>
       <PostreSection>
         <Container>
           <Row>
@@ -367,6 +543,50 @@ const Menu = ({ data: { item } }) => (
           </Row>
         </Container>
       </PostreSection>
+      <AddOnSection>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <h2 className="mt-5 mb-4">Add on</h2>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-start pb-5">
+            {item.nodes.map(item => {
+              return (
+                item.menuSection === "Add on" && (
+                  <Col
+                    md={4}
+                    sm={6}
+                    xs={12}
+                    key={`${item.slug}`}
+                  >
+                    <div className="menu-item bg-white border rounded pb-0 pt-3 pl-3 pr-3 mb-4">
+                      <div>
+                        {/* <GatsbyImage
+                          image={item.featuredImage.gatsbyImageData}
+                          alt={item.title}
+                        /> */}
+                        {item.cost !== null ? (
+                          <span className="p-2 font-weight-bold">
+                            {item.currency}
+                            {item.cost}
+                          </span>
+                        ) : (<span></span>)}
+                        <TruncateMarkup lines={1}>
+                          <h3 className="mt-3">{item.title}</h3>
+                        </TruncateMarkup>
+                        {item.description !== null ? (
+                          <div className="menu-description">{renderRichText(item.description, options)}</div>
+                        ) : (<span></span>)}
+                      </div>
+                    </div>
+                  </Col>
+                )
+              )
+            })}
+          </Row>
+        </Container>
+      </AddOnSection>
       <EndSection className="shadow">
         <Container>
           <Row>
@@ -505,25 +725,62 @@ const TacosSection = styled.div`
   background: ${variables.transLightPurple};
 }
 `
-const PlatosSection = styled.div`
+const MeatlessSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transWhite};
 }
 `
-const PostreSection = styled.div`
+const PlatosSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transYellow};
 }
 `
-const EndSection = styled.div`
+const SaladSection = styled.div`
   display: flex;
   width: 100%;
   transition: background 300ms;
   background: ${variables.transGreen};
+}
+`
+const SoupSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transOrange};
+}
+`
+const AlAmericanoSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transBlue};
+  padding: 3rem 0 5rem;
+}
+`
+const PostreSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transLightPurple};
+}
+`
+const AddOnSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transWhite};
+  padding: 3rem 0 5rem;
+}
+`
+const EndSection = styled.div`
+  display: flex;
+  width: 100%;
+  transition: background 300ms;
+  background: ${variables.transYellow};
   padding: 3rem 0 5rem;
 }
 `

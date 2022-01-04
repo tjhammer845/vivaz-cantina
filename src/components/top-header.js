@@ -56,10 +56,10 @@ export default function TopHeader() {
                 <FontAwesomeIcon icon={faPhone} />
               </a>
             <span className="address ml-3">
-              <FontAwesomeIcon icon={faMapPin} /> 161 Park St, New Haven, CT 06511
+              <FontAwesomeIcon icon={faMapPin} />&nbsp; 161 Park St, New Haven, CT 06511
             </span>
             <span className="hours ml-3">
-              <FontAwesomeIcon icon={faClock} /> Hours: 4pm-1am
+              <FontAwesomeIcon icon={faClock} />&nbsp; 4pm-1am
             </span>
             <span className="social-share">
               <SocialIcon
@@ -112,7 +112,13 @@ const StyledTopHeader = styled.header`
       font-size: 0.65rem;
       font-weight: 600;
       @media ${breakpoints.sm} {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
+      }
+    }
+    span:first-child {
+      display: none
+      @media ${breakpoints.sm} {
+        display: inline;
       }
     }
     .social-share {
