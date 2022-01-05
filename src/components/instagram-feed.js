@@ -36,7 +36,7 @@ const InstagramFeed = props => {
   const data = useStaticQuery(graphql`
     query InstagramQuery {
       allInstagramContent(
-        sort: { fields: timestamp, order: DESC }
+        sort: { fields: localImage___modifiedTime, order: DESC }
       ) {
         edges {
           node {
