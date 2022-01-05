@@ -1,12 +1,12 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const siteUrl = process.env.URL || `https://www.vivaznewhaven.com`
 module.exports = {
   siteMetadata: {
     title: `Vivaz Cantina | Gourmet Mexican in New Haven, CT`,
     description: `Mexican food from the heart.`,
     author: `@thecaffeineteam`,
-    siteUrl: `https://www.vivaznewhaven.com`
   },
   flags: {
     DEV_SSR: false,
@@ -21,29 +21,33 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `
         {
-          allSitePage {
-            edges {
-              node {
-                path
-                slug: path
-                url: path
-              }
+          allSitePage(filter: {isCreatedByStatefulCreatePages: {in: true}}) {
+            nodes {
+              path
             }
           }
         }
         `,
-        exclude: [
-          `/404`,
-          `/404.html`,
-          `//thank-you`,
-          `/assets`,
-          `/loading`,
-          `/offline-plugin-app-shell-fallback`,
-        ],
+          resolveSiteUrl: () => siteUrl,
+          resolvePages: ({
+            allSitePage: { nodes: allPages },
+          }) => {
+
+
+            return allPages.map(page => {
+              return { ...page }
+            })
+          },
+          serialize: ({ path, modifiedGmt }) => {
+            return {
+              url: path,
+              lastmod: modifiedGmt,
+            }
+        },
       },
     },
     {
