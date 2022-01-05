@@ -36,11 +36,6 @@ module.exports = {
           }
         }
         `,
-        mapping: {
-          allSitePage: {
-            sitemap: `pages`,
-          },
-        },
         exclude: [
           `/404`,
           `/404.html`,
@@ -49,8 +44,6 @@ module.exports = {
           `/loading`,
           `/offline-plugin-app-shell-fallback`,
         ],
-        createLinkInHead: true, // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
       },
     },
     {
