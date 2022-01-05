@@ -8,9 +8,6 @@ module.exports = {
     author: `@thecaffeineteam`,
     siteUrl: `https://www.vivaznewhaven.com`,
   },
-  flags: {
-    DEV_SSR: false,
-  },
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-fontawesome-css`,
