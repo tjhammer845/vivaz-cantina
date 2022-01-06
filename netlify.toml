@@ -1,11 +1,31 @@
 [[plugins]]
-package = "@netlify/plugin-sitemap"
+  package = "@netlify/plugin-sitemap"
 
-[plugins.inputs]
-prettyURLs = true
-trailingSlash = true
-buildDir = "./"
-filePath = "/sitemap.xml"
-changeFreq = "daily"
-priority = 0.5
-baseUrl = "https://vivaznewhaven.com"
+  [plugins.inputs]
+  prettyURLs = true
+  trailingSlash = true
+  buildDir = "./"
+  filePath = "/sitemap.xml"
+  changeFreq = "daily"
+  priority = 0.5
+  baseUrl = "https://vivaznewhaven.com"
+
+[build]
+  publish = "public"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+	[plugins.inputs]
+
+	# The base url of your site (optional, default = main URL set in Netlify)
+	baseUrl = "https://vivaznewhaven.com"
+
+	# Path to the sitemap URL (optional, default = /sitemap.xml)
+	sitemapPath = "/sitemap.xml"
+
+	providers = [
+		"google",
+		"bing",
+		"yandex"
+	]
