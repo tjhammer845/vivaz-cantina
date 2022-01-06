@@ -1,5 +1,6 @@
 [[plugins]]
 package = "@netlify/plugin-sitemap"
+package = "netlify-plugin-submit-sitemap"
 
 [plugins.inputs]
 prettyURLs = true
@@ -9,4 +10,3 @@ filePath = "/sitemap.xml"
 changeFreq = "daily"
 priority = 0.5
 baseUrl = "https://vivaznewhaven.com"
-package = "netlify-plugin-submit-sitemap"
