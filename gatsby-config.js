@@ -30,7 +30,7 @@ module.exports = {
               siteUrl
             }
           }
-          allSitePage(filter: {isCreatedByStatefulCreatePages: {eq: true}}) {
+          allSitePage(filter: {isCreatedByStatefulCreatePages: {in: true}}) {
             nodes {
               path
             }
