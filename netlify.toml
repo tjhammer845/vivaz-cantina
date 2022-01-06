@@ -1,0 +1,13 @@
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+[plugins.inputs]
+buildDir = "public"
+filePath = "/sitemap.xml"
+exclude = [
+  # By file Path
+  #'./build-dir/path-to/file.html',
+]
+changeFreq = "daily"
+priority = 0.5
+baseUrl = "https://vivaznewhaven.com"

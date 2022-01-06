@@ -20,27 +20,27 @@ module.exports = {
     `gatsby-plugin-typography`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/sitemap.xml`,
-        query: `{
-          site {
-            meta: siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage(filter: {isCreatedByStatefulCreatePages: {in: true}}) {
-            nodes {
-              path
-            }
-          }
-        }`,
-        resolveSiteUrl: ({ site }) => site.meta.siteUrl,
-        serialize: ({ site, allSitePage }) =>
-        allSitePage.nodes.map(node => ({ url: `${site.siteMetadata.siteUrl}${node.path}` })),
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: {
+    //     output: `/sitemap.xml`,
+    //     query: `{
+    //       site {
+    //         meta: siteMetadata {
+    //           siteUrl
+    //         }
+    //       }
+    //       allSitePage(filter: {isCreatedByStatefulCreatePages: {in: true}}) {
+    //         nodes {
+    //           path
+    //         }
+    //       }
+    //     }`,
+    //     resolveSiteUrl: ({ site }) => site.meta.siteUrl,
+    //     serialize: ({ site, allSitePage }) =>
+    //     allSitePage.nodes.map(node => ({ url: `${site.siteMetadata.siteUrl}${node.path}` })),
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
