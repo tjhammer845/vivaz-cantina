@@ -39,9 +39,9 @@ const SlideShow = () => {
               placeholder="blurred"
               loading="lazy"
             />
-            <Carousel.Caption className="d-none d-sm-block">
+            {/* <Carousel.Caption className="d-none d-sm-block">
               <p>{image.node.base.split("-").join(" ").split(".")[0]}</p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>
