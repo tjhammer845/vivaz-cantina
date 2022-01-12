@@ -19,27 +19,24 @@ const IndexPage = () => (
           <Row>
             <Col sm={12}>
               <h2>
-                Proudly serving gourmet Mexican food from the heart in New
-                Haven, CT
+                Think VivaZ Cantina for gourmet Mexican food in New Haven, CT.
               </h2>
               <p>
-                With over 20 years of experience, Chef Bernardino Lanche brings
-                his passion for food, and love of his family and community to
-                each and every dish prepared here at Vivaz Cantina. A favorite
-                among residents in New Haven, Vivaz Cantina is committed to
-                using only the freshest ingredients to deliver the best possible
-                Mexican experience in everything we create and serve!
+                With over 20 years of culinary experience, Chef Bernardino Lanche brings
+                his passion for food and love of his family and community to
+                 every dish served at VivaZ Cantina. A favorite
+                among residents in New Haven, VivaZ Cantina is committed to
+                using only fresh, local ingredients to deliver the best possible
+                Mexican experience.
               </p>
               <p>
-                Here at Vivaz Cantina we are proud to offer our community a
-                Mexican dining experience like no other. From the moment you
-                walk through the door, you will be welcomed with open arms and
-                we are confident that by the time you leave you will not only
+                Here at VivaZ Cantina, we are proud to offer our community
+                Mexican dining like no other. By the time you leave, you will not only
                 have your appetite satisfied beyond measure, but also consider
-                yourself a part of the Vivaz family! Making beautiful memories
-                around our dining tables is what we are all about! We are
-                passioniate about customer service and dedicated to preparing
-                and serving the best Mexican cuisine in the New Haven area.
+                yourself a part of the family! Making great memories
+                around the table is what we are all about. We are
+                passioniate about customer service and dedicated to providing
+                 the best Mexican cuisine in Connecticut.
               </p>
             </Col>
           </Row>

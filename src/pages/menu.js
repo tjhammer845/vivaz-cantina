@@ -50,10 +50,7 @@ const Menu = ({ data: { item } }) => (
             <Col sm={12}>
               <h2>Our Menu</h2>
               <p>
-                Come in to Vivaz Cantina for the best Mexican-inspired brunch
-                every Saturday and Sunday from 9am - 1pm. Our Menu is constantly
-                changing to capture the best of authentic Mexican soul foods in
-                every one of our traditional dish.
+              Our dishes and drinks are always evolving to capture the tastes between traditional and contemporary Mexican cuisines. We find inspiration in  gourmet ingredients while staying true to our family flavors. 
               </p>
             </Col>
           </Row>
@@ -590,16 +587,12 @@ const Menu = ({ data: { item } }) => (
       <EndSection className="shadow">
         <Container>
           <Row>
-            <Col sm={12} className="text-center">
-              <h2 className="mt-5">
-                Disclaimer: pricing and availability subject to change.
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+            <Col sm={12}>
+              <h3 className="text-center mt-5">
+                Our Disclaimer
+              </h3>
+              <p className="text-left">
+               Thoroughly cooking meat, poultry, seafood, shellfish or eggs reduce the risk of foodborne illnesses. We do not assume liability for adverse reactions to foods consumed, or items one may come into contact with while at our restaurant. Prices and availability subject to change.</p>
             </Col>
           </Row>
         </Container>
