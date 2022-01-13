@@ -19,7 +19,7 @@ const contact = () => {
         <Container>
           <Row>
             <Col sm={12}>
-              <h2 className="pt-5 pb-3">Contact Vivaz Cantina</h2>
+              <h2 className="pt-5 pb-3">Contact VivaZ Cantina</h2>
             </Col>
           </Row>
         </Container>
