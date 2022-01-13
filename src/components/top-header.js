@@ -129,6 +129,7 @@ const StyledTopHeader = styled.header`
         a {
             height: 28px!important;
             width: 28px!important;
+            margin-top: 0.05rem;
         }
         a:first-child {
             .social-container {
@@ -157,7 +158,7 @@ const StyledTopHeader = styled.header`
                 }
             }
         }
-        @media ${breakpoints.lg} {
+        @media ${breakpoints.xs} {
             position: relative;
             display: flex;
             align-items: center;
@@ -167,6 +168,7 @@ const StyledTopHeader = styled.header`
             a {
                 height: 30px!important;
                 width: 30px!important;
+                margin-top: 0;
             }
         }
     }
