@@ -99,7 +99,7 @@ const StyledTopHeader = styled.header`
             color: white;
         }
         &:hover {
-            background: ${variables.purple};
+            background: ${variables.orange};
         }
         @media ${breakpoints.lg} {
             a {
@@ -129,6 +129,33 @@ const StyledTopHeader = styled.header`
         a {
             height: 28px!important;
             width: 28px!important;
+        }
+        a:first-child {
+            .social-container {
+                .social-svg {
+                    g.social-svg-mask {
+                      fill:  ${variables.darkBlue}!important;
+                    }
+                }
+            }
+        }
+        a:last-child {
+            .social-container {
+                .social-svg {
+                    g.social-svg-mask {
+                      fill:  ${variables.lightPurple}!important;
+                    }
+                }
+            }
+        }
+        a:hover {
+            .social-container {
+                .social-svg {
+                    g.social-svg-mask {
+                      fill:  ${variables.orange}!important;
+                    }
+                }
+            }
         }
         @media ${breakpoints.lg} {
             position: relative;

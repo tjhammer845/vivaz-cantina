@@ -64,7 +64,7 @@ const PopularItems = () => {
       <Container>
         <Row>
           <Col sm={12}>
-            <h2>Try some of our Favorite Bites!</h2>
+            <h2>Try some of our favorite drinks &amp; bites!</h2>
           </Col>
         </Row>
         <Row>

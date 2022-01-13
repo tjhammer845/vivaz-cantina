@@ -92,7 +92,7 @@ const InstagramFeed = props => {
         <Row>
           <Col sm={12}>
             <h2 className="text-white">
-              Follow us on Instagram for Promotions and Updates!
+              Follow us on Instagram for promotions and updates!
             </h2>
           </Col>
         </Row>

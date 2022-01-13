@@ -48,7 +48,7 @@ const Footer = () => (
           className="d-flex justify-content-center justify-content-md-end"
         >
           <StyledP className="m-0">
-            &copy; {new Date().getFullYear()} Vivaz Cantina. All rights reserved.
+            &copy; {new Date().getFullYear()} VivaZ Cantina. All rights reserved.
           </StyledP>
         </Col>
       </Row>

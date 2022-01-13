@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHourglassHalf } from "@fortawesome/free-solid-svg-icons"
+import { faClock } from "@fortawesome/free-solid-svg-icons"
 import { faMapPin } from "@fortawesome/free-solid-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { breakpoints } from "../utils/breakpoints"
@@ -19,9 +19,8 @@ export default function ContactInfo() {
         <br /> New Haven, CT 06511
       </p>
       <p className="d-flex mb-0">
-        <FontAwesomeIcon icon={faHourglassHalf} />
-        <span>
-          <strong className="mr-2">Everyday</strong>4pm - 1am
+        <FontAwesomeIcon icon={faClock} />
+        <span>Tuesday - Sunday:<br/> 4pm - 1am
         </span>
       </p>
     </StyledInfoContainer>

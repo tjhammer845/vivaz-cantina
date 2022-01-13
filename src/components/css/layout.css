@@ -174,8 +174,8 @@ button.btn-primary {
   background-color: #a52800 !important;
   border-color: #a52800 !important;
   font-weight: bold !important;
-  padding-top: 0.65rem !important;
-  padding-bottom: 0.65rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.75rem !important;
   max-height: 50px;
 }
 button.btn-primary:hover {

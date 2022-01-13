@@ -38,6 +38,9 @@ const IndexPage = () => (
                 passioniate about customer service and dedicated to providing
                  the best Mexican cuisine in Connecticut.
               </p>
+              <div className="resp-container">
+                  <iframe src="https://www.facebook.com/plugins/video.php?height=317&href=https%3A%2F%2Fwww.facebook.com%2Fvivaznewhaven%2Fvideos%2F304488945033934%2F&show_text=false&width=560&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -50,6 +53,26 @@ const IndexPage = () => (
 export default IndexPage
 const HomeContainer = styled.div`
   padding-top: 4rem;
+  .resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 65%;
+    margin: 3rem auto 0;
+    width: 100%;
+    height: 100%;
+    @media ${breakpoints.md} {
+      padding-top: 40%;
+      width: 60%;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
   @media ${breakpoints.md} {
     padding-top: 10rem;
   }
