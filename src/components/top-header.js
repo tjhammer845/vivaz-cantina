@@ -49,7 +49,7 @@ export default function TopHeader() {
         <Row>
           <Col sm={12} className="pl-lg-0 pr-lg-0">
               <a
-                href="tel:475-238-0664"
+                href="tel:475-238-6390"
                 className="phone-btn"
                 title="Call VivaZ Cantina"
               >

@@ -12,7 +12,7 @@ export default function ContactInfo() {
     <StyledInfoContainer>
       <h3>Contact Information</h3>
       <p>
-        <FontAwesomeIcon icon={faPhone} /> (475) 238-0664
+        <FontAwesomeIcon icon={faPhone} /> (475) 238-6390
       </p>
       <p className="d-flex">
         <FontAwesomeIcon icon={faMapPin} /> 161 Park Street,
