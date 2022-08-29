@@ -626,8 +626,12 @@ const MenuContainer = styled.div`
     color: black;
     font-size: 2rem;
   }
+  @media (min-width: 768px){
+    .menu-item {
+      min-height: 8rem;
+    }
+  }
   .menu-item {
-    min-height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
