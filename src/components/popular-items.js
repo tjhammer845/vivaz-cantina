@@ -45,8 +45,8 @@ const PopularItems = () => {
       item: allContentfulMenu(sort: { fields: title }) {
         nodes {
           title
-          currency
-          cost
+          # currency
+          # cost
           slug
           popular
           description {
@@ -83,12 +83,12 @@ const PopularItems = () => {
                       image={item.featuredImage.gatsbyImageData}
                       alt={item.title}
                     /> */}
-                    {item.cost !== null ? (
+                    {/* {item.cost !== null ? (
                       <span className="p-2 font-weight-bold">
                         {item.currency}
                         {item.cost}
                       </span>
-                    ) : (<span></span>)}
+                    ) : (<span></span>)} */}
                     <h3>{item.title}</h3>
                     {item.description !== null ? (
                       <div className="menu-description">{renderRichText(item.description, options)}</div>
