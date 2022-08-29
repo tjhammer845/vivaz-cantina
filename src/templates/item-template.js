@@ -57,12 +57,12 @@ const ItemTemplate = ({ data }) => {
 
               <h3 className="mt-4 mb-2">
                 {data.contentfulMenu.title}{" "}
-                {data.contentfulMenu.cost !== null ? (
+                {/* {data.contentfulMenu.cost !== null ? (
                       <span className="p-2 font-weight-bold">
                         {data.contentfulMenu.currency}
                         {data.contentfulMenu.cost}
                       </span>
-                    ) : (<span></span>)}
+                    ) : (<span></span>)} */}
               </h3>
               { data.contentfulMenu.description !== null ? (
                 <div>
@@ -95,8 +95,8 @@ export const query = graphql`
   query {
     contentfulMenu {
       title
-      currency
-      cost
+      # currency
+      # cost
       slug
       # featuredImage {
       #   gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1)
