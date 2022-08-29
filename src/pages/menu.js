@@ -79,12 +79,12 @@ const Menu = ({ data: { item } }) => (
                           image={item.featuredImage.gatsbyImageData}
                           alt={item.title}
                         /> */}
-                        {item.cost !== null ? (
+                        {/* {item.cost !== null ? (
                           <span className="p-2 font-weight-bold">
                             {item.currency}
                             {item.cost}
                           </span>
-                        ) : (<span></span>)}
+                        ) : (<span></span>)} */}
                         <TruncateMarkup lines={1}>
                           <h3 className="mt-3">{item.title}</h3>
                         </TruncateMarkup>
