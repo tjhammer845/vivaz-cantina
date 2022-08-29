@@ -630,6 +630,9 @@ const MenuContainer = styled.div`
     .menu-item {
       min-height: 8rem;
     }
+    h3 {
+      font-size: 0.8rem;
+    }
   }
   .menu-item {
     display: flex;
