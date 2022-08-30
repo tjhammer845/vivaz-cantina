@@ -53,7 +53,7 @@ const Menu = ({ data: { item } }) => (
               <p>
               Our dishes and drinks are always evolving to capture the tastes between traditional and contemporary Mexican cuisines. We find inspiration in  gourmet ingredients while staying true to our family flavors. 
               </p>
-              <a href="{Pdf}" target="_blank" classname="block btn btn-primary mt-5">PDF Menu</a>
+              <a href={Pdf} target="_blank" classname="block btn btn-primary mt-5">PDF Menu</a>
             </Col>
           </Row>
         </Container>
