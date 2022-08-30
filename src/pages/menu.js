@@ -627,15 +627,21 @@ const MenuContainer = styled.div`
     color: black;
     font-size: 2rem;
   }
-  @media (min-width: 768px){
+  @media (max-width: 767px){
     .menu-item {
-      min-height: 8rem;
-    }
-    h3 {
-      font-size: 0.8rem;
+      min-height: 0;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      h3 {
+        font-size: 0.8rem;
+      }
+      .menu-description p {
+        margin-bottom: 0;
+      }
     }
   }
   .menu-item {
+    min-height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
