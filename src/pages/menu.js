@@ -628,19 +628,6 @@ const MenuContainer = styled.div`
     color: black;
     font-size: 2rem;
   }
-  @media (max-width: 767px){
-    .menu-item {
-      min-height: 0;
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
-      h3 {
-        font-size: 0.8rem;
-      }
-      .menu-description p {
-        margin-bottom: 0;
-      }
-    }
-  }
   .menu-item {
     min-height: 8rem;
     display: flex;
@@ -686,6 +673,19 @@ const MenuContainer = styled.div`
         p {
           color: #000;
         }
+      }
+    }
+  }
+  @media (max-width: 767px){
+    .menu-item {
+      min-height: 0!important;
+      padding-top: 0.25rem!important;
+      padding-bottom: 0.25rem!important;
+      h3 {
+        font-size: 0.8rem;
+      }
+      .menu-description p {
+        margin-bottom: 0;
       }
     }
   }
