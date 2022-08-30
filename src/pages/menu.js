@@ -10,6 +10,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { variables } from "../utils/variables"
+import Pdf from '../pdfs/vivaz-cantina-menu.pdf';
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
 const Text = ({ children }) => (
@@ -52,7 +53,7 @@ const Menu = ({ data: { item } }) => (
               <p>
               Our dishes and drinks are always evolving to capture the tastes between traditional and contemporary Mexican cuisines. We find inspiration in  gourmet ingredients while staying true to our family flavors. 
               </p>
-              <a href="/pdfs/vivaz-cantina-menu.pdf" target="_blank" classname="block btn btn-primary mt-5">PDF Menu</a>
+              <a href="{Pdf}" target="_blank" classname="block btn btn-primary mt-5">PDF Menu</a>
             </Col>
           </Row>
         </Container>
