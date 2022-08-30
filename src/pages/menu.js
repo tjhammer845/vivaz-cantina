@@ -679,10 +679,12 @@ const MenuContainer = styled.div`
   @media (max-width: 767px){
     .menu-item {
       min-height: 0!important;
-      padding-top: 0.25rem!important;
-      padding-bottom: 0.25rem!important;
+      padding-top: 0.75rem!important;
+      padding-bottom: 0.5rem!important;
+      margin-bottom: 0.5rem!important;
       h3 {
         font-size: 0.8rem;
+        margin: 0!important;
       }
       .menu-description p {
         margin-bottom: 0;
