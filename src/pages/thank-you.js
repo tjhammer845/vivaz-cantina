@@ -1,5 +1,5 @@
 import * as React from "react"
-import InstagramFeed from "../components/instagram-feed"
+//import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Container, Col, Row } from "react-bootstrap"
@@ -47,7 +47,7 @@ const ThankYou = () => {
           </Row>
         </Container>
       </ThankyouContainer>
-      <InstagramFeed />
+     {/* <InstagramFeed /> */}
     </Layout>
   )
 }

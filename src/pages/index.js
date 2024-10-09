@@ -1,5 +1,5 @@
 import * as React from "react"
-import InstagramFeed from "../components/instagram-feed"
+//import InstagramFeed from "../components/instagram-feed"
 import Layout from "../components/layout"
 import PopularItems from "../components/popular-items"
 import Slideshow from "../components/home-slideshow"
@@ -46,7 +46,7 @@ const IndexPage = () => (
         </Container>
       </HomeContent>
       <PopularItems />
-      <InstagramFeed />
+      {/* <InstagramFeed /> */}
     </HomeContainer>
   </Layout>
 )

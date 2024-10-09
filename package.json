@@ -44,7 +44,6 @@
     "gatsby-remark-responsive-iframe": "^5.5.0",
     "gatsby-source-contentful": "^5.6.0",
     "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-source-instagram-all": "^4.2.0",
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.5.0",
     "immer": "^9.0.6",
