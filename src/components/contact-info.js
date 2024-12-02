@@ -20,7 +20,7 @@ export default function ContactInfo() {
       </p>
       <p className="d-flex mb-0">
         <FontAwesomeIcon icon={faClock} />
-        <span>Tuesday - Sunday:<br/> 4pm - 1am
+        <span>Tuesday - Sunday:<br/> 4pm - 12am
         </span>
       </p>
     </StyledInfoContainer>
